@@ -1,20 +1,34 @@
 Headline Specifications
 =======================
 
-User Story 1.0:
+User Story 1.0
 ---------------
 User can sign-in and sign-up
+
 User Story 1.1.
+
 As a User;
+
 So that I can be a host and/or a guest;
+
 I want to sign up for MakersBnB.
+
+
 User Story 1.2
+
 As a User;
+
 So that I can book or list a property;
+
 I want to log in to MakersBnB.
+
+
 User Story 1.3
+
 As a User;
+
 So that I can avoid others dealing with my properties;
+
 I want to be able to log out of MakersBnB.
 
 User Story 2.0
