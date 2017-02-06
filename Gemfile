@@ -19,6 +19,7 @@ end
 group :development do
   gem 'data_mapper', '~> 1.2.0'
   gem 'dm-postgres-adapter'
+  gem 'rainbow', '>=2.1.0', '<2.2.0'
   gem 'dm-transactions'
   gem 'sinatra'
   gem 'sinatra-flash'
