@@ -12,6 +12,9 @@ require 'bcrypt'
 
 require 'pry'
 
+require './app/models/space'
+
+
 env = ENV['RACK_ENV'] || 'development'
 
 DataMapper.setup(:default, ENV['DATABASE_URL'] || "postgres://localhost/makers_bnb_#{env}")
