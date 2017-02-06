@@ -2,8 +2,8 @@ require_relative 'data_mapper_setup'
 
 class MakersBnB < Sinatra::Base
 
-  register Sinatra::Flash
   enable :sessions
+  register Sinatra::Flash
 
   get '/' do
     erb :index
@@ -13,6 +13,27 @@ class MakersBnB < Sinatra::Base
     user = User.create(email: params[:email], password: params[:password], password_confirmation: params[:password_confirmation])
     session[:user_id] = user.id
     redirect '/spaces'
+  end
+
+  get '/spaces' do
+    erb :spaces
+  end
+
+  get '/login' do
+    erb :login
+  end
+
+  post '/login' do
+    user = User.authenticate(params[:email], params[:password])
+    if user
+      session[:user_id] = user.id
+      redirect '/spaces'
+    else
+      flash[:errors] = ['The email or password is incorrect.']
+      redirect '/'
+    end
+    # Create a link to signup page
+    # Push error to layout.erb
   end
 
   # start the server if ruby file executed directly
