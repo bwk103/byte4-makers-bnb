@@ -11,6 +11,7 @@ require 'encrypted_cookie'
 require 'bcrypt'
 
 require 'pry'
+require_relative 'models/user.rb'
 
 env = ENV['RACK_ENV'] || 'development'
 
