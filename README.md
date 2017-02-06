@@ -1,7 +1,7 @@
 Headline Specifications
 =======================
 
-User Story 1.0
+**User Story 1.0**
 ---------------
 User can sign-in and sign-up
 
