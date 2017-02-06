@@ -32,4 +32,22 @@ feature 'Feature tests' do
     expect(page).to have_content 'Sign out'
   end
 
+  # => User Story 1.3
+
+  # As a User
+  # So that I can avoid others dealing with my properties
+  # I want to be able to log out of MakersBnB.
+
+  scenario 'User Story 1.3. Log Out' do
+    User.create(email: 'test@test.com', password: 'test', password_confirmation: 'test' )
+    visit '/'
+    click_link 'Log In'
+    fill_in :email, with: 'test@test.com'
+    fill_in :password, with: 'test'
+    click_button 'Log In'
+    click_link 'Sign out'
+    expect(current_path).to eq '/spaces'
+    expect(page).not_to have_content 'Sign out'
+    expect(page).to have_content 'Log In'
+  end
 end

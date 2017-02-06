@@ -23,6 +23,12 @@ class MakersBnB < Sinatra::Base
     erb :login
   end
 
+  get '/signout' do
+    session[:user_id] = nil
+    flash.keep[:notice] = "See you soon!"
+    redirect '/spaces'
+  end
+
   post '/login' do
     user = User.authenticate(params[:email], params[:password])
     if user
