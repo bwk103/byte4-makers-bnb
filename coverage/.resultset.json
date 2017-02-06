@@ -1,7 +1,25 @@
 {
   "RSpec": {
     "coverage": {
+      "/Users/KateLoschinina/Workspace/MakersAcademy/byte4-makers-bnb/spec/feature_tests_spec.rb": [
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null
+      ]
     },
-    "timestamp": 1486397063
+    "timestamp": 1486401705
   }
 }

@@ -4,9 +4,13 @@ class MakersBnB < Sinatra::Base
 
   register Sinatra::Flash
   enable :sessions
-  
+
   get '/' do
-    'Hello MakersBnB!'
+    erb :index
+  end
+
+  post '/signup' do
+    redirect '/spaces'
   end
 
   # start the server if ruby file executed directly
