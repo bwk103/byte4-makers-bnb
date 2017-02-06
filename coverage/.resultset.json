@@ -1,7 +1,22 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/Sim/Projects/MainCourse/Week6/byte4-makers-bnb/spec/features/new_listing_spec.rb": [
+      "/Users/IreneCanuti/Maker_Projects/byte4-makers-bnb/spec/features/new_listing_spec.rb": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
         null,
         null,
         null,
@@ -11,14 +26,14 @@
         1,
         1,
         1,
-        0,
-        0,
-        0,
-        0,
+        1,
+        1,
+        1,
+        1,
         null,
         null
       ],
-      "/Users/Sim/Projects/MainCourse/Week6/byte4-makers-bnb/spec/space_spec.rb": [
+      "/Users/IreneCanuti/Maker_Projects/byte4-makers-bnb/spec/space_spec.rb": [
         1,
         null,
         1,
@@ -43,6 +58,6 @@
         null
       ]
     },
-    "timestamp": 1486404634
+    "timestamp": 1486409841
   }
 }
