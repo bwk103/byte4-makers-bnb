@@ -48,6 +48,6 @@ feature 'Feature tests' do
     click_link 'Sign Out'
     expect(current_path).to eq '/spaces'
     expect(page).not_to have_content 'Sign Out'
-    expect(page).to have_content 'Log In'
+    expect(page).to have_content 'See you soon!'
   end
 end

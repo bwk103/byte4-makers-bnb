@@ -5,7 +5,7 @@ feature "header messages logic" do
     expect(page).to have_content "Sign Up"
   end
 
-  scenario "when signing out from spaces, user can revisit signin" do
+  scenario "when signing out from spaces, user can revisit sign_in page" do
     signup_with_valid_email
     click_link 'Sign Out'
     expect(page).to have_content 'Log In'
