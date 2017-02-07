@@ -6,17 +6,27 @@ class MakersBnB < Sinatra::Base
   register Sinatra::Flash
 
   get '/' do
-    erb :index
+     erb :index
   end
 
   post '/signup' do
     user = User.create(email: params[:email], password: params[:password], password_confirmation: params[:password_confirmation])
     session[:user_id] = user.id
     redirect '/spaces'
+   end
+
+  get '/spaces/new' do
+    erb :'spaces/new'
+  end
+
+  post '/spaces' do
+    @space = Space.create(title: params[:title], description: params[:description],price: params[:price])
+    redirect '/spaces'
   end
 
   get '/spaces' do
-    erb :spaces
+    @spaces = Space.all
+    erb :'spaces/index'
   end
 
   get '/login' do
@@ -38,10 +48,7 @@ class MakersBnB < Sinatra::Base
       flash[:errors] = 'The email or password is incorrect!'
       redirect '/login'
     end
-    # Create a link to signup page
-    # Push error to layout.erb
   end
 
-  # start the server if ruby file executed directly
   run! if app_file == $0
 end
