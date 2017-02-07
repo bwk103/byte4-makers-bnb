@@ -1,63 +1,13 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/IreneCanuti/Maker_Projects/byte4-makers-bnb/spec/features/new_listing_spec.rb": [
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
         null,
         null,
         1,
         1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        null,
-        null
-      ],
-      "/Users/IreneCanuti/Maker_Projects/byte4-makers-bnb/spec/space_spec.rb": [
-        1,
-        null,
-        1,
-        null,
-        null,
-        4,
-        null,
-        null,
-        1,
-        1,
-        null,
-        null,
-        1,
-        1,
-        null,
-        null,
-        1,
-        1,
-        null,
-        null,
         null,
         null
       ]
     },
-    "timestamp": 1486464604
   }
 }

@@ -6,7 +6,7 @@ class MakersBnB < Sinatra::Base
   enable :sessions
 
   get '/' do
-
+     erb :index
   end
 
   get '/spaces/new' do
