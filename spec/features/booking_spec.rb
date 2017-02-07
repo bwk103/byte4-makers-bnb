@@ -6,10 +6,9 @@
 
 feature 'Booking' do
   scenario 'user submit request for a listed space' do
-    signup_with_valid_email
     create_listing
     click_link "Book"
-    expect(current_path).to eq '/spaces/1'
+    expect(current_path).to have_content '/spaces/'
     click_button 'Request to Book'
     expect(current_path).to eq '/requests'
     expect(page).to have_content 'Your booking request has been submitted!'

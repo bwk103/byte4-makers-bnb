@@ -16,6 +16,7 @@ def login_wth_invalid_password
 end
 
 def create_listing
+  signup_with_valid_email
   visit '/spaces/new'
   fill_in(:title, with: 'Casa della Pizza')
   fill_in(:description, with: 'Una casa con la mia pizza preferita, e mi piace.')
