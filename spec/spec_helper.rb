@@ -2,6 +2,8 @@
 
 ENV['RACK_ENV'] = 'test'
 
+require './app/models/space'
+
 require File.join(File.dirname(__FILE__), '..', 'app/app.rb')
 
 require 'capybara'

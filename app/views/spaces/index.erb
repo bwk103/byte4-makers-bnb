@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MakersBnB</title>
+  </head>
+
+  <body style="text-align:center;">
+
+    <h1>Hello MakersBnB!</h1>
+
+    <h3>Spaces</h3>
+
+    <ul id="spaces"  style="list-style-type: none;">
+      <% @spaces.each do |space| %>
+        <li>
+        Title: <%= space.title %><br />
+        Description: <%= space.description %></br>
+        Price per Night: <%= space.price %></br>
+        </li>
+      <% end %>
+    </ul>
+
+  </body>
+</html>

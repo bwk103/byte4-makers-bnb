@@ -187,7 +187,7 @@ DEPENDENCIES
   capybara
   coveralls
   cucumber
-  data_mapper
+  data_mapper (~> 1.2.0)
   database_cleaner
   dm-postgres-adapter
   dm-transactions
