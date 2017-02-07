@@ -8,6 +8,8 @@ class Space
   property :title,        String
   property :description,  Text
   property :price,        Float
+  property :start_date,   Date
+  property :end_date,     Date
 
   belongs_to :user
   has n, :bookings
