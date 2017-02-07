@@ -11,6 +11,7 @@ require 'encrypted_cookie'
 require 'bcrypt'
 
 require 'pry'
+require_relative 'models/user.rb'
 
 require './app/models/space'
 
