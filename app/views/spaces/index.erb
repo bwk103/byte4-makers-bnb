@@ -20,6 +20,7 @@
       Title: <%= space.title %><br />
       Description: <%= space.description %></br>
       Price per Night: <%= space.price %></br>
+      Available from <%= space.start_date.strftime("%d/%m/%Y") %> to <%= space.end_date.strftime("%d/%m/%Y") %> 
     </li>
   <% end %>
 </ul>

@@ -24,6 +24,8 @@ feature 'Create New Listing' do
     fill_in(:title, with: 'Casa della Pizza')
     fill_in(:description, with: 'Una casa con la mia pizza preferita, e mi piace.')
     fill_in(:price, with: 89.91)
+    fill_in(:start_date, with: '04/07/2017')
+    fill_in(:end_date, with: '08/07/2017')
     click_button('Create Listing')
     expect(page).to have_content('Casa della Pizza')
   end
