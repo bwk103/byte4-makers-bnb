@@ -12,7 +12,7 @@ feature 'Feature tests' do
     fill_in :password_confirmation, with: 'test'
     click_button 'Sign Up'
     expect(current_path).to eq '/spaces'
-    expect(page).to have_content 'Sign out'
+    expect(page).to have_content 'Sign Out'
   end
 
   #   User Story 1.2
@@ -29,7 +29,7 @@ feature 'Feature tests' do
     fill_in :password, with: 'test'
     click_button 'Log In'
     expect(current_path).to eq '/spaces'
-    expect(page).to have_content 'Sign out'
+    expect(page).to have_content 'Sign Out'
   end
 
   # => User Story 1.3
@@ -45,9 +45,9 @@ feature 'Feature tests' do
     fill_in :email, with: 'test@test.com'
     fill_in :password, with: 'test'
     click_button 'Log In'
-    click_link 'Sign out'
+    click_link 'Sign Out'
     expect(current_path).to eq '/spaces'
-    expect(page).not_to have_content 'Sign out'
+    expect(page).not_to have_content 'Sign Out'
     expect(page).to have_content 'Log In'
   end
 end

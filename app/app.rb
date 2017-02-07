@@ -35,8 +35,8 @@ class MakersBnB < Sinatra::Base
       session[:user_id] = user.id
       redirect '/spaces'
     else
-      flash[:errors] = ['The email or password is incorrect.']
-      redirect '/'
+      flash[:errors] = 'The email or password is incorrect.'
+      redirect '/login'
     end
     # Create a link to signup page
     # Push error to layout.erb
