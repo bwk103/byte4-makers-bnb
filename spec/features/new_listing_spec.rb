@@ -20,7 +20,7 @@
 
 feature 'Create New Listing' do
   scenario 'A User wants to list Space' do
-    visit '/listings/new'
+    visit '/spaces/new'
     fill_in(:title, with: 'Casa della Pizza')
     fill_in(:description, with: 'Una casa con la mia pizza preferita, e mi piace.')
     fill_in(:price, with: 89.91)
