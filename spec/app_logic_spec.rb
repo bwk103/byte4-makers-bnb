@@ -10,4 +10,9 @@ feature "header messages logic" do
     click_link 'Sign Out'
     expect(page).to have_content 'Log In'
   end
+
+  scenario "user receives message when signing in with incorrect password" do
+    login_wth_invalid_password
+    expect(page).to have_content 'The email or password is incorrect!'
+  end
 end

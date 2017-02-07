@@ -14,6 +14,11 @@
         1,
         1,
         null,
+        null,
+        1,
+        1,
+        1,
+        null,
         null
       ],
       "/Users/sallyjanekielty/Desktop/Ben/Makers/Projects/byte4-makers-bnb/spec/feature_tests_spec.rb": [
@@ -88,6 +93,6 @@
         null
       ]
     },
-    "timestamp": 1486465500
+    "timestamp": 1486465926
   }
 }
