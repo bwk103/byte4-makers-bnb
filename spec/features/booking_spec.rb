@@ -8,8 +8,7 @@ feature 'Booking' do
   scenario 'user submit request for a listed space' do
     signup_with_valid_email
     create_listing
-    visit '/spaces/1'
-    expect(page).to have_content 'Request to book'
-    # not the end
+    click_link "Book"
+    expect(current_path).to eq '/spaces/1'
   end
 end

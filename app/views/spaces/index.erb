@@ -10,9 +10,11 @@
 
 <h3>Spaces</h3>
 
-<form action='/spaces/new'>
+<%if session[:user_id] %>
+  <form action='/spaces/new'>
   <input type='submit' value='List New Space'>
-</form>
+  </form>
+<% end %>
 
 <ul id="spaces">
   <% @spaces.each do |space| %>
@@ -20,7 +22,9 @@
       Title: <%= space.title %><br />
       Description: <%= space.description %></br>
       Price per Night: <%= space.price %></br>
-      <a href="/spaces/<%=space.id%>">Book</a>
+      <%if session[:user_id] %>
+        <a href="/spaces/<%=space.id%>">Book</a>
+      <% end %>
     </li>
   <% end %>
 </ul>

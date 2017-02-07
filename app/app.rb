@@ -55,5 +55,9 @@ class MakersBnB < Sinatra::Base
     end
   end
 
+  post '/requests' do
+    erb :requests
+  end
+
   run! if app_file == $0
 end
