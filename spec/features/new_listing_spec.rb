@@ -20,6 +20,7 @@
 
 feature 'Create New Listing' do
   scenario 'A User wants to list Space' do
+    signup_with_valid_email
     create_listing
     expect(page).to have_content('Casa della Pizza')
   end

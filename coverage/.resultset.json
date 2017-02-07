@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/sallyjanekielty/Desktop/Ben/Makers/Projects/byte4-makers-bnb/spec/app_logic_spec.rb": [
+      "/Users/KateLoschinina/Workspace/MakersAcademy/byte4-makers-bnb/spec/app_logic_spec.rb": [
         1,
         null,
         1,
@@ -21,7 +21,7 @@
         null,
         null
       ],
-      "/Users/sallyjanekielty/Desktop/Ben/Makers/Projects/byte4-makers-bnb/spec/features/booking_spec.rb": [
+      "/Users/KateLoschinina/Workspace/MakersAcademy/byte4-makers-bnb/spec/features/booking_spec.rb": [
         null,
         null,
         null,
@@ -37,7 +37,7 @@
         null,
         null
       ],
-      "/Users/sallyjanekielty/Desktop/Ben/Makers/Projects/byte4-makers-bnb/spec/features/new_listing_spec.rb": [
+      "/Users/KateLoschinina/Workspace/MakersAcademy/byte4-makers-bnb/spec/features/new_listing_spec.rb": [
         null,
         null,
         null,
@@ -58,60 +58,6 @@
         null,
         null,
         null,
-        1,
-        1,
-        1,
-        1,
-        null,
-        null
-      ],
-      "/Users/sallyjanekielty/Desktop/Ben/Makers/Projects/byte4-makers-bnb/spec/features/signup_login_spec.rb": [
-        1,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
         1,
         1,
         1,
@@ -120,7 +66,62 @@
         null,
         null
       ],
-      "/Users/sallyjanekielty/Desktop/Ben/Makers/Projects/byte4-makers-bnb/spec/space_spec.rb": [
+      "/Users/KateLoschinina/Workspace/MakersAcademy/byte4-makers-bnb/spec/features/signup_login_spec.rb": [
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/KateLoschinina/Workspace/MakersAcademy/byte4-makers-bnb/spec/space_spec.rb": [
         1,
         null,
         1,
@@ -144,7 +145,7 @@
         null,
         null
       ],
-      "/Users/sallyjanekielty/Desktop/Ben/Makers/Projects/byte4-makers-bnb/spec/units/user_spec.rb": [
+      "/Users/KateLoschinina/Workspace/MakersAcademy/byte4-makers-bnb/spec/units/user_spec.rb": [
         1,
         1,
         2,
@@ -161,6 +162,6 @@
         null
       ]
     },
-    "timestamp": 1486483993
+    "timestamp": 1486485596
   }
 }

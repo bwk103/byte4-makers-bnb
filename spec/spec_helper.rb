@@ -14,6 +14,8 @@ require 'database_cleaner'
 require 'coveralls'
 require 'simplecov'
 require './app/models/user.rb'
+require './app/models/space.rb'
+require './app/models/booking.rb'
 require 'web_helper.rb'
 
 SimpleCov.formatters = [
