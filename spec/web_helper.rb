@@ -14,3 +14,11 @@ def login_wth_invalid_password
   fill_in :password, with: 'not_test'
   click_button 'Log In'
 end
+
+def create_listing
+  visit '/spaces/new'
+  fill_in(:title, with: 'Casa della Pizza')
+  fill_in(:description, with: 'Una casa con la mia pizza preferita, e mi piace.')
+  fill_in(:price, with: 89.91)
+  click_button('Create Listing')
+end
