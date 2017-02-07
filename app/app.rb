@@ -20,8 +20,14 @@ class MakersBnB < Sinatra::Base
   end
 
   post '/spaces' do
-    @space = Space.create(title: params[:title], description: params[:description],price: params[:price], start_date: params[:start_date], end_date: params[:end_date])
+    @space = Space.create(title: params[:title], description: params[:description],price: params[:price], user_id: session[:user_id], start_date: params[:start_date], end_date: params[:end_date])
     redirect '/spaces'
+  end
+
+  get '/spaces/:id' do
+    @space = Space.get(params[:id])
+    session[:space_id] = params[:id]
+    erb :space_page
   end
 
   get '/spaces' do
@@ -48,6 +54,12 @@ class MakersBnB < Sinatra::Base
       flash[:errors] = 'The email or password is incorrect!'
       redirect '/login'
     end
+  end
+
+  post '/requests' do
+    @booking = Booking.create(guest_id: session[:user_id], request_text: params[:text], status: 'Not confirmed', space_id: session[:space_id])
+    @space = Space.get(@booking.space_id)
+    erb :requests
   end
 
   run! if app_file == $0

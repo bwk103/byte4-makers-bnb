@@ -1,0 +1,15 @@
+<header>
+  <a href='/spaces'>Spaces</a>
+  <a href='/requests'>Requests</a>
+  <a href='/signout'>Sign Out</a>
+</header>
+
+<h1><%= @space.title %></h1>
+
+<p><%= @space.description %></p>
+<p>Price per night: <%= @space.price %></p>
+
+<form action='/requests' method='post'>
+<input type='text' name='text'>
+<input type= 'submit' value= 'Request to Book' name='booking'>
+</form>
