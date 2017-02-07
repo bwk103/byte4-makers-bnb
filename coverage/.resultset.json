@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/KateLoschinina/Workspace/MakersAcademy/byte4-makers-bnb/spec/app_logic_spec.rb": [
+      "/Users/IreneCanuti/Maker_Projects/byte4-makers-bnb/spec/app_logic_spec.rb": [
         1,
         null,
         1,
@@ -21,7 +21,7 @@
         null,
         null
       ],
-      "/Users/KateLoschinina/Workspace/MakersAcademy/byte4-makers-bnb/spec/feature_tests_spec.rb": [
+      "/Users/IreneCanuti/Maker_Projects/byte4-makers-bnb/spec/feature_tests_spec.rb": [
         1,
         null,
         null,
@@ -76,7 +76,7 @@
         null,
         null
       ],
-      "/Users/KateLoschinina/Workspace/MakersAcademy/byte4-makers-bnb/spec/features/new_listing_spec.rb": [
+      "/Users/IreneCanuti/Maker_Projects/byte4-makers-bnb/spec/features/new_listing_spec.rb": [
         null,
         null,
         null,
@@ -108,7 +108,7 @@
         null,
         null
       ],
-      "/Users/KateLoschinina/Workspace/MakersAcademy/byte4-makers-bnb/spec/space_spec.rb": [
+      "/Users/IreneCanuti/Maker_Projects/byte4-makers-bnb/spec/space_spec.rb": [
         1,
         null,
         1,
@@ -132,7 +132,7 @@
         null,
         null
       ],
-      "/Users/KateLoschinina/Workspace/MakersAcademy/byte4-makers-bnb/spec/units/user_spec.rb": [
+      "/Users/IreneCanuti/Maker_Projects/byte4-makers-bnb/spec/units/user_spec.rb": [
         1,
         1,
         2,
@@ -149,6 +149,6 @@
         null
       ]
     },
-    "timestamp": 1486467521
+    "timestamp": 1486467815
   }
 }
