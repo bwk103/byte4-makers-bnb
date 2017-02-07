@@ -26,6 +26,7 @@ class MakersBnB < Sinatra::Base
 
   get '/spaces/:id' do
     @space = Space.get(params[:id])
+    session[:space_id] = params[:id]
     erb :space_page
   end
 
@@ -56,6 +57,8 @@ class MakersBnB < Sinatra::Base
   end
 
   post '/requests' do
+    @booking = Booking.create(guest_id: session[:user_id], request_text: params[:text], status: 'Not confirmed', space_id: session[:space_id])
+    @space = Space.get(@booking.space_id)
     erb :requests
   end
 

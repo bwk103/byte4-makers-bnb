@@ -10,6 +10,6 @@ class Space
   property :price,        Float
 
   belongs_to :user
-  #has n, :bookings
+  has n, :bookings
 
 end
