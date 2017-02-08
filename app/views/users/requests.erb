@@ -25,6 +25,7 @@
         Space: <%= booking.space.title %><br />
         Msg: <%= booking.request_text %></br>
         Date: <%= booking.date %></br>
+        Guest: <%= User.get(booking.guest_id).email %></br>
         Status: <%= booking.status %></br>
       </li>
       <% end %>
