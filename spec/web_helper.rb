@@ -36,7 +36,7 @@ end
 def log_out_and_login_with_another_user
   click_link 'Sign Out'
   click_link 'Log In'
-  click_link 'Sign Up'
+  click_link 'SIGN UP'
   fill_in :email, with: 'test2@test.com'
   fill_in :password, with: 'test'
   fill_in :password_confirmation, with: 'test'
