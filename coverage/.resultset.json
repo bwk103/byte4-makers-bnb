@@ -19,6 +19,13 @@
         1,
         1,
         null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
         null
       ],
       "/Users/KateLoschinina/Workspace/MakersAcademy/byte4-makers-bnb/spec/features/add_availability_spec.rb": [
@@ -43,6 +50,7 @@
         null,
         null,
         null,
+        1,
         1,
         1,
         1,
@@ -114,7 +122,7 @@
         1,
         1,
         1,
-        0,
+        1,
         null,
         null,
         null,
@@ -131,9 +139,9 @@
         1,
         1,
         1,
-        0,
-        0,
-        0,
+        1,
+        1,
+        1,
         null,
         null
       ],
@@ -178,6 +186,6 @@
         null
       ]
     },
-    "timestamp": 1486551275
+    "timestamp": 1486554573
   }
 }

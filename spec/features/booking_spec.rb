@@ -7,6 +7,7 @@
 feature 'Booking' do
   scenario 'user submit request for a listed space' do
     create_listing
+    log_out_and_login_with_another_user
     click_link "Book"
     expect(current_path).to have_content '/spaces/'
     click_button 'Request to Book'
