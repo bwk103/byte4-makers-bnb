@@ -5,14 +5,26 @@ class MakersBnB < Sinatra::Base
   enable :sessions
   register Sinatra::Flash
 
+  helpers do
+
+    def current_user
+      @current_user ||= User.get(session[:user_id])
+    end
+  end
+
   get '/' do
      erb :index
   end
 
   post '/signup' do
-    user = User.create(email: params[:email], password: params[:password], password_confirmation: params[:password_confirmation])
-    session[:user_id] = user.id
-    redirect '/spaces'
+    if User.first(email: params[:email])
+      flash[:errors] = 'Seems that your account already exists! Please try to login...'
+      redirect '/users/login'
+    else
+      user = User.create(email: params[:email], password: params[:password], password_confirmation: params[:password_confirmation])
+      session[:user_id] = user.id
+      redirect '/spaces'
+    end
    end
 
   get '/spaces/new' do
@@ -20,14 +32,14 @@ class MakersBnB < Sinatra::Base
   end
 
   post '/spaces' do
-    @space = Space.create(title: params[:title], description: params[:description],price: params[:price], user_id: session[:user_id], start_date: params[:start_date], end_date: params[:end_date])
+    Space.create(title: params[:title], description: params[:description],price: params[:price], user_id: session[:user_id], start_date: params[:start_date], end_date: params[:end_date])
     redirect '/spaces'
   end
 
   get '/spaces/:id' do
     @space = Space.get(params[:id])
     session[:space_id] = params[:id]
-    erb :space_page
+    erb :'spaces/space_page'
   end
 
   get '/spaces' do
@@ -35,8 +47,8 @@ class MakersBnB < Sinatra::Base
     erb :'spaces/index'
   end
 
-  get '/login' do
-    erb :login
+  get '/users/login' do
+    erb :'users/login'
   end
 
   get '/signout' do
@@ -52,7 +64,7 @@ class MakersBnB < Sinatra::Base
       redirect '/spaces'
     else
       flash[:errors] = 'The email or password is incorrect!'
-      redirect '/login'
+      redirect '/users/login'
     end
   end
 
@@ -62,10 +74,10 @@ class MakersBnB < Sinatra::Base
     available_dates = (@space.start_date..@space.end_date)
     if available_dates.include? (Date.strptime(params[:date], '%Y-%m-%d'))
       @booking.save
-      erb :requests
+      erb :'users/requests'
     else
       flash.now[:errors] = 'Unavailable Date.'
-      erb :space_page
+      erb :'spaces/space_page'
       #redirect '/spaces/space.id'
     end
   end

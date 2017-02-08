@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/Sim/Projects/MainCourse/Week6/byte4-makers-bnb/spec/app_logic_spec.rb": [
+      "/Users/sallyjanekielty/Desktop/Ben/Makers/Projects/byte4-makers-bnb/spec/app_logic_spec.rb": [
         1,
         null,
         1,
@@ -21,7 +21,7 @@
         null,
         null
       ],
-      "/Users/Sim/Projects/MainCourse/Week6/byte4-makers-bnb/spec/features/add_availability_spec.rb": [
+      "/Users/sallyjanekielty/Desktop/Ben/Makers/Projects/byte4-makers-bnb/spec/features/add_availability_spec.rb": [
         null,
         null,
         null,
@@ -36,7 +36,7 @@
         null,
         null
       ],
-      "/Users/Sim/Projects/MainCourse/Week6/byte4-makers-bnb/spec/features/booking_spec.rb": [
+      "/Users/sallyjanekielty/Desktop/Ben/Makers/Projects/byte4-makers-bnb/spec/features/booking_spec.rb": [
         null,
         null,
         null,
@@ -70,7 +70,7 @@
         null,
         null
       ],
-      "/Users/Sim/Projects/MainCourse/Week6/byte4-makers-bnb/spec/features/new_listing_spec.rb": [
+      "/Users/sallyjanekielty/Desktop/Ben/Makers/Projects/byte4-makers-bnb/spec/features/new_listing_spec.rb": [
         null,
         null,
         null,
@@ -98,7 +98,7 @@
         null,
         null
       ],
-      "/Users/Sim/Projects/MainCourse/Week6/byte4-makers-bnb/spec/features/signup_login_spec.rb": [
+      "/Users/sallyjanekielty/Desktop/Ben/Makers/Projects/byte4-makers-bnb/spec/features/signup_login_spec.rb": [
         1,
         null,
         null,
@@ -153,7 +153,7 @@
         null,
         null
       ],
-      "/Users/Sim/Projects/MainCourse/Week6/byte4-makers-bnb/spec/space_spec.rb": [
+      "/Users/sallyjanekielty/Desktop/Ben/Makers/Projects/byte4-makers-bnb/spec/space_spec.rb": [
         1,
         null,
         1,
@@ -177,7 +177,7 @@
         null,
         null
       ],
-      "/Users/Sim/Projects/MainCourse/Week6/byte4-makers-bnb/spec/units/user_spec.rb": [
+      "/Users/sallyjanekielty/Desktop/Ben/Makers/Projects/byte4-makers-bnb/spec/units/user_spec.rb": [
         1,
         1,
         2,
@@ -194,6 +194,6 @@
         null
       ]
     },
-    "timestamp": 1486566049
+    "timestamp": 1486566231
   }
 }

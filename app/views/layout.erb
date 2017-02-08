@@ -4,7 +4,24 @@
     <title>MakersBnB</title>
    </head>
     <body>
-      <%= yield %>
+
+      <% if current_user %>
+      <header>
+        <a href='/spaces'>Spaces</a>
+        <a href='/users/requests'>Requests</a>
+        <a href='/signout'>Sign Out</a>
+      </header>
+
+      <h3><%= current_user.email %></h3>
+
+      <% else %>
+      <header>
+        <a href='/about'>About</a>
+        <a href='/users/login'>Log In</a>
+      </header>
+
+      <% end %>
+
       <% if flash[:notice] %>
         <div id='notice'>
         <%= flash[:notice] %>
@@ -15,5 +32,6 @@
         <div id='error'><%= flash[:errors] %></div>
       <% end %>
 
+      <%= yield %>
    </body>
  </html>
