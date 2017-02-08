@@ -1,0 +1,32 @@
+<h1>Requests</h1>
+
+<h2>Requests you have made:</h2>
+
+  <ul id="guest_requests">
+    <% @bookings.each do |booking| %>
+      <% if booking.guest_id == current_user.id %>
+      <li>
+        Space: <%= booking.space.title %><br />
+        Msg: <%= booking.request_text %></br>
+        Date: <%= booking.date %></br>
+        Status: <%= booking.status %></br>
+      </li>
+      <% end %>
+    <% end %>
+  </ul>
+
+
+<h2>Requests you have received:</h2>
+
+  <ul id="host_requests">
+    <% @bookings.each do |booking| %>
+      <% if booking.space.user_id == current_user.id %>
+      <li>
+        Space: <%= booking.space.title %><br />
+        Msg: <%= booking.request_text %></br>
+        Date: <%= booking.date %></br>
+        Status: <%= booking.status %></br>
+      </li>
+      <% end %>
+    <% end %>
+  </ul>
