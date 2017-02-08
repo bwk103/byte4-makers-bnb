@@ -27,6 +27,7 @@
         Date: <%= booking.date %></br>
         Guest: <%= User.get(booking.guest_id).email %></br>
         Status: <%= booking.status %></br>
+        <a href='/users/requests/confirmation/<%= booking.id %>'>Confirm / deny</a>
       </li>
       <% end %>
     <% end %>

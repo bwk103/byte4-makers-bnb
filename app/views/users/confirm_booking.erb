@@ -1,0 +1,10 @@
+<h1><%= @booking.space.title %></h1>
+
+<p><%= @booking.space.description %></p>
+<p>Price per night: <%= @booking.space.price %></p>
+<p>Date: <%= @booking.date %></p>
+
+<form action='confirm' method='post'>
+  <input type='submit' name='confirm' value='Confirm'>
+  <input type='submit' name='deny' value='Deny'>
+</form>

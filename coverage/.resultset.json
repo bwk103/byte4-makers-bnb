@@ -149,6 +149,38 @@
         1,
         null,
         null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
         null
       ],
       "/Users/KateLoschinina/Workspace/MakersAcademy/byte4-makers-bnb/spec/features/signup_login_spec.rb": [
@@ -247,6 +279,6 @@
         null
       ]
     },
-    "timestamp": 1486575276
+    "timestamp": 1486590326
   }
 }

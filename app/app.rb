@@ -86,5 +86,24 @@ class MakersBnB < Sinatra::Base
     erb :'users/requests'
   end
 
+  get '/users/requests/confirmation/:id' do
+    @booking = Booking.get(params[:id])
+    session[:booking_id] = @booking.id
+    erb :'users/confirm_booking'
+  end
+
+  post '/users/requests/confirmation/confirm' do
+    booking = Booking.get(session[:booking_id])
+    # binding.pry
+    if params[:confirm] == 'Confirm'
+      booking.status = 'Confirmed'
+    elsif params[:deny] == 'Deny'
+      booking.status = 'Denied'
+    end
+    booking.save
+    redirect 'users/requests'
+  end
+
+
   run! if app_file == $0
 end
