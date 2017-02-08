@@ -5,6 +5,12 @@ class MakersBnB < Sinatra::Base
   enable :sessions
   register Sinatra::Flash
 
+  helpers do
+    def current_user
+      @current_user ||= User.get(session[:user_id])
+    end
+  end
+
   get '/' do
      erb :index
   end
@@ -27,7 +33,7 @@ class MakersBnB < Sinatra::Base
   get '/spaces/:id' do
     @space = Space.get(params[:id])
     session[:space_id] = params[:id]
-    erb :space_page
+    erb :'spaces/space_page'
   end
 
   get '/spaces' do
@@ -35,8 +41,8 @@ class MakersBnB < Sinatra::Base
     erb :'spaces/index'
   end
 
-  get '/login' do
-    erb :login
+  get '/users/login' do
+    erb :'users/login'
   end
 
   get '/signout' do
@@ -45,21 +51,21 @@ class MakersBnB < Sinatra::Base
     redirect '/spaces'
   end
 
-  post '/login' do
+  post '/users/login' do
     user = User.authenticate(params[:email], params[:password])
     if user
       session[:user_id] = user.id
       redirect '/spaces'
     else
       flash[:errors] = 'The email or password is incorrect!'
-      redirect '/login'
+      redirect '/users/login'
     end
   end
 
-  post '/requests' do
-    @booking = Booking.create(guest_id: session[:user_id], request_text: params[:text], status: 'Not confirmed', space_id: session[:space_id])
+  get '/users/requests' do
+    @booking = Booking.create(guest_id: current_user, request_text: params[:text], status: 'Not confirmed', space_id: session[:space_id])
     @space = Space.get(@booking.space_id)
-    erb :requests
+    erb :'users/requests'
   end
 
   run! if app_file == $0

@@ -10,7 +10,7 @@ feature 'Booking' do
     click_link "Book"
     expect(current_path).to have_content '/spaces/'
     click_button 'Request to Book'
-    expect(current_path).to eq '/requests'
+    expect(current_path).to eq '/users/requests'
     expect(page).to have_content 'Your booking request has been submitted!'
   end
 end

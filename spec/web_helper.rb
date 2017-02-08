@@ -9,7 +9,7 @@ end
 
 def login_wth_invalid_password
   signup_with_valid_email
-  visit '/login'
+  visit '/users/login'
   fill_in :email, with: 'test@test.com'
   fill_in :password, with: 'not_test'
   click_button 'Log In'

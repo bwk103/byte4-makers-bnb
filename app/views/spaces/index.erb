@@ -1,5 +1,5 @@
 <header>
-  <%if session[:user_id]%>
+  <%if current_user%>
     <a href='/signout'>Sign Out</a>
   <% else %>
     <a href='/login'>Log In</a>
@@ -10,12 +10,12 @@
 
 <h3>Spaces</h3>
 
-<%if session[:user_id] %>
+<%if current_user %>
   <form action='/spaces/new'>
   <input type='submit' value='List New Space'>
   </form>
 <% end %>
- 
+
 <ul id="spaces">
   <% @spaces.each do |space| %>
     <li>
@@ -27,7 +27,7 @@
 
       <%if session[:user_id] %>
         <a href="/spaces/<%=space.id%>">Book</a>
-      <% end %> 
+      <% end %>
 
     </li>
   <% end %>

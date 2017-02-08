@@ -1,7 +1,7 @@
 feature "header messages logic" do
 
   scenario "user can sign up from the login page" do
-    visit '/login'
+    visit '/users/login'
     expect(page).to have_content "Sign Up"
   end
 
