@@ -1,8 +1,8 @@
 feature "header messages logic" do
 
   scenario "user can sign up from the login page" do
-    visit '/login'
-    expect(page).to have_content "Sign Up"
+    visit '/users/login'
+    expect(page).to have_content "SIGN UP"
   end
 
   scenario "when signing out from spaces, user can revisit sign_in page" do
@@ -12,7 +12,14 @@ feature "header messages logic" do
   end
 
   scenario "user receives message when signing in with incorrect password" do
-    login_wth_invalid_password
+    login_with_invalid_password
     expect(page).to have_content 'The email or password is incorrect!'
+  end
+
+  scenario "user cannot book their own space" do
+    create_listing
+    expect(page).to have_content 'Casa della Pizza'
+    expect(page).to have_content 'This is your space!'
+    expect(page).not_to have_content 'Book'
   end
 end

@@ -6,7 +6,6 @@ class MakersBnB < Sinatra::Base
   register Sinatra::Flash
 
   helpers do
-
     def current_user
       @current_user ||= User.get(session[:user_id])
     end
@@ -74,12 +73,17 @@ class MakersBnB < Sinatra::Base
     available_dates = (@space.start_date..@space.end_date)
     if available_dates.include? (Date.strptime(params[:date], '%Y-%m-%d'))
       @booking.save
-      erb :'users/requests'
+      redirect 'users/requests'
     else
       flash.now[:errors] = 'Unavailable Date.'
       erb :'spaces/space_page'
       #redirect '/spaces/space.id'
     end
+  end
+
+  get '/users/requests' do
+    @bookings = Booking.all
+    erb :'users/requests'
   end
 
   run! if app_file == $0
