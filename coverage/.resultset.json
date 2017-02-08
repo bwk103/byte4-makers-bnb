@@ -104,6 +104,20 @@
         1,
         null,
         null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
         null
       ],
       "/Users/IreneCanuti/Maker_Projects/byte4-makers-bnb/spec/features/signup_login_spec.rb": [
@@ -202,6 +216,6 @@
         null
       ]
     },
-    "timestamp": 1486557641
+    "timestamp": 1486558389
   }
 }

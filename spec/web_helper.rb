@@ -7,6 +7,13 @@ def signup_with_valid_email
   click_button 'Sign Up'
 end
 
+def login_with_existing_user
+  visit '/users/login'
+  fill_in :email, with: 'test@test.com'
+  fill_in :password, with: 'test'
+  click_button 'Log In'
+end
+
 def login_with_invalid_password
   signup_with_valid_email
   visit '/users/login'
