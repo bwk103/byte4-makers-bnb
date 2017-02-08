@@ -4,7 +4,6 @@
 # So that I can make a booking for 1 night;
 # I want to be able to send a request to the Host.
 
-<<<<<<< HEAD
 feature 'Booking' do
 
   scenario 'user can see the availability on the booking page' do
@@ -31,7 +30,7 @@ feature 'Booking' do
   end
 
 end
-=======
+
 # feature 'Booking' do
 #   scenario 'user submit request for a listed space' do
 #     create_listing
@@ -43,4 +42,3 @@ end
 #     expect(page).to have_content 'Your booking request has been submitted!'
 #   end
 # end
->>>>>>> master
