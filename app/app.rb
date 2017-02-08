@@ -60,19 +60,14 @@ class MakersBnB < Sinatra::Base
     @booking = Booking.new(guest_id: session[:user_id], request_text: params[:text], status: 'Not confirmed', space_id: session[:space_id])
     @space = Space.get(@booking.space_id)
     available_dates = (@space.start_date..@space.end_date)
-      available_dates.each do |date|
-        p date
-      end
-      p params[:date]
-
-    if available_dates.include?(params[:date])
-      p "This printed"
-      # @booking.save
+    if available_dates.include? (Date.strptime(params[:date], '%Y-%m-%d'))
+      @booking.save
+      erb :requests
     else
-      p "Not available"
-      # redirect '/requests'
+      flash.now[:errors] = 'Unavailable Date.'
+      erb :space_page
+      #redirect '/spaces/space.id'
     end
-    erb :requests
   end
 
   run! if app_file == $0
