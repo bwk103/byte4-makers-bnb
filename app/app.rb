@@ -16,7 +16,6 @@ class MakersBnB < Sinatra::Base
   end
 
   post '/signup' do
-    # binding.pry
     if User.first(email: params[:email])
       flash[:errors] = 'Seems that your account already exists! Please try to login...'
       redirect '/users/login'
@@ -69,8 +68,17 @@ class MakersBnB < Sinatra::Base
   end
 
   post '/requests' do
-    Booking.create(guest_id: current_user.id, request_text: params[:text], status: 'Not confirmed', space_id: session[:space_id])
-    redirect 'users/requests'
+    @booking = Booking.new(guest_id: session[:user_id], request_text: params[:text], status: 'Not confirmed', space_id: session[:space_id])
+    @space = Space.get(@booking.space_id)
+    available_dates = (@space.start_date..@space.end_date)
+    if available_dates.include? (Date.strptime(params[:date], '%Y-%m-%d'))
+      @booking.save
+      redirect 'users/requests'
+    else
+      flash.now[:errors] = 'Unavailable Date.'
+      erb :'spaces/space_page'
+      #redirect '/spaces/space.id'
+    end
   end
 
   get '/users/requests' do
