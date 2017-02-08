@@ -13,4 +13,11 @@ feature 'Booking' do
     expect(current_path).to eq '/requests'
     expect(page).to have_content 'Your booking request has been submitted!'
   end
+
+  scenario 'user can see the availability on the booking page' do
+    create_listing
+    click_link "Book"
+    expect(current_path).to have_content '/spaces/'
+    expect(page).to have_content 'Available from: 04/07/2017 to: 08/07/2017'
+  end
 end

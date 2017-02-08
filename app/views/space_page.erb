@@ -8,6 +8,7 @@
 
 <p><%= @space.description %></p>
 <p>Price per night: <%= @space.price %></p>
+<p> Available from: <%= @space.start_date.strftime("%d/%m/%Y") %> to: <%= @space.end_date.strftime("%d/%m/%Y") %></p>
 
 <form action='/requests' method='post'>
 <textarea cols="50" rows="4" name='text'></textarea>
