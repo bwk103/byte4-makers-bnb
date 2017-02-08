@@ -12,14 +12,13 @@
         <a href='/signout'>Sign Out</a>
       </header>
 
-      <h3><%= current_user.email %></h3>
+      <h3>Hello, <%= current_user.email %>!</h3>
 
       <% else %>
       <header>
         <a href='/about'>About</a>
         <a href='/users/login'>Log In</a>
       </header>
-
       <% end %>
 
       <% if flash[:notice] %>

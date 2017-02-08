@@ -6,11 +6,7 @@ feature 'Feature tests' do
   #   I want to sign up for MakersBnB.
 
   scenario 'User Story 1.1. Sign up' do
-    visit '/'
-    fill_in :email, with: 'test@test.com'
-    fill_in :password, with: 'test'
-    fill_in :password_confirmation, with: 'test'
-    click_button 'Sign Up'
+    signup_with_valid_email
     expect(current_path).to eq '/spaces'
     expect(page).to have_content 'Sign Out'
   end
@@ -23,11 +19,7 @@ feature 'Feature tests' do
 
   scenario 'User Story 1.2. Log in' do
     User.create(email: 'test@test.com', password: 'test', password_confirmation: 'test' )
-    visit '/'
-    click_link 'Log In'
-    fill_in :email, with: 'test@test.com'
-    fill_in :password, with: 'test'
-    click_button 'Log In'
+    login_with_existing_user
     expect(current_path).to eq '/spaces'
     expect(page).to have_content 'Sign Out'
   end
@@ -40,11 +32,7 @@ feature 'Feature tests' do
 
   scenario 'User Story 1.3. Log Out' do
     User.create(email: 'test@test.com', password: 'test', password_confirmation: 'test' )
-    visit '/'
-    click_link 'Log In'
-    fill_in :email, with: 'test@test.com'
-    fill_in :password, with: 'test'
-    click_button 'Log In'
+    login_with_existing_user
     click_link 'Sign Out'
     expect(current_path).to eq '/spaces'
     expect(page).not_to have_content 'Sign Out'
