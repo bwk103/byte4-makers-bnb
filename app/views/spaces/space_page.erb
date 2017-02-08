@@ -9,7 +9,7 @@
 <p><%= @space.description %></p>
 <p>Price per night: <%= @space.price %></p>
 
-<form action='/users/requests'>
+<form action='/requests' method="post">
 <textarea cols="50" rows="4" name='text'></textarea>
 <input type= 'submit' value= 'Request to Book' name='booking'>
 </form>

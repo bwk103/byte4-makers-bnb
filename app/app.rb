@@ -51,7 +51,7 @@ class MakersBnB < Sinatra::Base
     redirect '/spaces'
   end
 
-  post '/users/login' do
+  post '/login' do
     user = User.authenticate(params[:email], params[:password])
     if user
       session[:user_id] = user.id
@@ -62,10 +62,13 @@ class MakersBnB < Sinatra::Base
     end
   end
 
+  post '/requests' do
+    Booking.create(guest_id: current_user.id, request_text: params[:text], status: 'Not confirmed', space_id: session[:space_id])
+    redirect 'users/requests'
+  end
+
   get '/users/requests' do
-    @booking = Booking.create(guest_id: current_user.id, request_text: params[:text], status: 'Not confirmed', space_id: session[:space_id])
     @bookings = Booking.all
-    @space = Space.get(@booking.space_id)
     erb :'users/requests'
   end
 
