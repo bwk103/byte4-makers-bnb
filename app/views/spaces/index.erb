@@ -2,7 +2,7 @@
   <%if current_user%>
     <a href='/signout'>Sign Out</a>
   <% else %>
-    <a href='/login'>Log In</a>
+    <a href='/users/login'>Log In</a>
   <% end %>
 </header>
 
@@ -25,8 +25,12 @@
 
       Available from <%= space.start_date.strftime("%d/%m/%Y") %> to <%= space.end_date.strftime("%d/%m/%Y") %>
 
-      <%if session[:user_id] %>
-        <a href="/spaces/<%=space.id%>">Book</a>
+      <% if current_user %>
+        <% if space.user_id != current_user.id %>
+          <a href="/spaces/<%=space.id%>">Book</a>
+        <% else %>
+          <p> This is your space! </p>
+        <% end %>
       <% end %>
 
     </li>
