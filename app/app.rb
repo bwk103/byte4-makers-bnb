@@ -63,7 +63,8 @@ class MakersBnB < Sinatra::Base
   end
 
   get '/users/requests' do
-    @booking = Booking.create(guest_id: current_user, request_text: params[:text], status: 'Not confirmed', space_id: session[:space_id])
+    @booking = Booking.create(guest_id: current_user.id, request_text: params[:text], status: 'Not confirmed', space_id: session[:space_id])
+    @bookings = Booking.all
     @space = Space.get(@booking.space_id)
     erb :'users/requests'
   end

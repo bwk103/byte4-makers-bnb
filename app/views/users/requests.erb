@@ -1,10 +1,24 @@
-<H1> Your booking request has been submitted!</h1>
+<h1>Requests</h1>
 
-<h2> Your host will be in touch shortly</h2>
+<h2>Requests you have made:</h2>
 
-<p> Your request: </p>
+<ul id="guest_requests">
+  <% @bookings.each do |booking| %>
+    <% if booking.guest_id == current_user.id %>
+    <li>
+      Space: <%= booking.space.title %><br />
+      Msg: <%= booking.request_text %></br>
+      Date: <%= booking.date %></br>
+      Status: <%= booking.status %></br>
+    </li>
+    <% end %>
+  <% end %>
+</ul>
 
-  <p> <%= @space.title %> </p>
-  <p> <%= @space.description %> </p>
 
-  <p> <%= @booking.status %> </p>
+<h2>Requests you have received:</h2>
+
+<p> <%= @space.title %> </p>
+<p> <%= @space.description %> </p>
+
+<p> <%= @booking.status %> </p>
