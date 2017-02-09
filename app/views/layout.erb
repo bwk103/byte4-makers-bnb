@@ -2,24 +2,32 @@
  <html>
    <head>
     <title>MakersBnB</title>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
    </head>
     <body>
 
-      <% if current_user %>
       <header>
-        <a href='/spaces'>Spaces</a>
-        <a href='/users/requests'>Requests</a>
-        <a href='/signout'>Sign Out</a>
-      </header>
 
-      <h3>Hello, <%= current_user.email %>!</h3>
+        <img class='logo' src='https://cabinetm-beta.s3.amazonaws.com/00000151-f024-81f9-2162-aa79b005069f.png'>
 
-      <% else %>
-      <header>
-        <a href='/about'>About</a>
-        <a href='/users/login'>Log In</a>
-      </header>
-      <% end %>
+
+        <% if current_user %>
+          <ul class='menu'>
+            <li class='menu_item'><a href='/spaces'>Spaces</a></li>
+            <li class='menu_item'><a href='/users/requests'>Requests</a></li>
+            <li class='menu_item'><a href='/signout'>Sign Out</a></li>
+          </ul>
+
+          <h3>Hello, <%= current_user.email %>!</h3>
+
+          <% else %>
+          <ul class='menu'>
+            <li><a href='/about'>About</a></li>
+            <li><a href='/users/login'>Log In</a></li>
+          </ul>
+          <% end %>
+
+        </header>
 
       <% if flash[:notice] %>
         <div id='notice'>

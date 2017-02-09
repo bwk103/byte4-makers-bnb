@@ -1,0 +1,24 @@
+html{
+
+}
+
+.logo{
+  height: 8vh;
+}
+
+header {
+  height: 10vh;
+}
+
+.menu {
+  padding: 0;
+  width: 1200px;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.menu_item {
+  float: right;
+  width: 60px;
+  list-style: none;
+}
