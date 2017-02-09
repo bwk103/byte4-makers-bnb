@@ -9,12 +9,12 @@ feature 'Booking' do
   scenario 'user can see the availability on the booking page' do
     book_an_existing_space
     expect(current_path).to have_content '/spaces/'
-    expect(page).to have_content 'Available from: 04/07/2017 to: 08/07/2017'
+    expect(page).to have_content 'Available from: 04/07/2017 to: 18/07/2017'
   end
 
   scenario 'user can book on an available date' do
     book_an_existing_space
-    fill_in :date, with: '2017-07-05'
+    fill_in :date, with: '2017-07-15'
     click_button 'Request to Book'
     expect(page).to have_content 'Requests you have made:'
   end
@@ -34,7 +34,7 @@ feature 'Booking' do
     login_with_existing_user
     click_link "Requests"
     click_link "Confirm / deny"
-    click_button "confirm"
+    click_button "Confirm"
     click_link "Sign Out"
     click_link 'Log In'
     click_link 'SIGN UP'

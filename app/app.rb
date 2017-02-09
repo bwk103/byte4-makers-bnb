@@ -68,11 +68,14 @@ class MakersBnB < Sinatra::Base
   end
 
   post '/requests' do
-    @booking = Booking.new(guest_id: session[:user_id], request_text: params[:text], status: 'Not confirmed', space_id: session[:space_id], date: params[:date])
+    @booking = Booking.new(guest_id: session[:user_id], request_text: params[:text], status: 'Not confirmed', space_id: session[:space_id], date: Date.strptime(params[:date], '%Y-%m-%d'))
     @space = Space.get(@booking.space_id)
     available_dates = (@space.start_date..@space.end_date)
-    #unavailable_dates = Booking.all(:space_id => @booking.space_id, :status => "Confirmed").map {|booking| booking.date}
-    if available_dates.include? Date.strptime(params[:date], '%Y-%m-%d') && !(unavailable_dates.include? Date.strptime(params[:date], '%Y-%m-%d'))
+    unavailable_dates = Booking.all(:space_id => @booking.space_id, :status => "Confirmed").map {|booking| booking.date}
+    # p available_dates.each { |date| p date }
+    # p unavailable_dates.each { |date| p date }
+    # p Date.strptime(params[:date], '%Y-%m-%d')
+    if (available_dates.include? @booking.date) && !(unavailable_dates.include? @booking.date)
       @booking.save
       redirect 'users/requests'
     else
