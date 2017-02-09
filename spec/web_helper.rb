@@ -8,7 +8,8 @@ def signup_with_valid_email
 end
 
 def login_with_existing_user
-  visit '/users/login'
+  visit '/'
+  click_link 'Log In'
   fill_in :email, with: 'test@test.com'
   fill_in :password, with: 'test'
   click_button 'Log In'
@@ -41,4 +42,27 @@ def log_out_and_login_with_another_user
   fill_in :password, with: 'test'
   fill_in :password_confirmation, with: 'test'
   click_button 'Sign Up'
+end
+
+def request_to_book
+  create_listing
+  log_out_and_login_with_another_user
+  click_link 'Book'
+  fill_in :text, with: 'I wanna book this!'
+  fill_in :date, with: '2017-07-05'
+  click_button 'Request to Book'
+end
+
+def go_to_confirm_or_deny_form
+  request_to_book
+  click_link 'Sign Out'
+  login_with_existing_user
+  visit '/users/requests'
+  click_link 'Confirm / deny'
+end
+
+def book_an_existing_space
+  create_listing
+  log_out_and_login_with_another_user
+  click_link 'Book'
 end

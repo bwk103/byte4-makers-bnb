@@ -1,29 +1,45 @@
 feature 'requests displayed on page' do
 
   scenario 'Guest can see their requests' do
-    create_listing
-    log_out_and_login_with_another_user
-    click_link 'Book'
-    fill_in :text, with: 'I wanna book this!'
-    fill_in :date, with: '2017-07-05'
-    click_button 'Request to Book'
+    request_to_book
     within('ul#guest_requests') do
       expect(page).to have_content('Casa della Pizza')
     end
   end
 
   scenario 'Guest can see their requests' do
-    create_listing
-    log_out_and_login_with_another_user
-    click_link 'Book'
-    fill_in :text, with: 'I wanna book this!'
-    fill_in :date, with: '2017-07-05'
-    click_button 'Request to Book'
+    request_to_book
     click_link 'Sign Out'
     login_with_existing_user
     visit '/users/requests'
     within('ul#host_requests') do
       expect(page).to have_content('I wanna book this!')
     end
+  end
+
+# User Story 6.2
+#
+# As a Host;
+# So that I can manage bookings;
+# I want to be able to approve guests’ requests.
+
+# User Story 8.1
+#
+# As a Host;
+# So that I can manage multiple requests for the same date;
+# I want to be able to confirm the booking for the guest of my choice.
+
+  scenario 'User Story 6.2 and 8.1: Host can confirm request' do
+    go_to_confirm_or_deny_form
+    click_button 'Confirm'
+    expect(page).to have_content('Confirmed')
+    expect(page).not_to have_content('Not confirmed')
+  end
+
+  scenario 'Host can deny request' do
+    go_to_confirm_or_deny_form
+    click_button 'Deny'
+    expect(page).to have_content('Denied')
+    expect(page).not_to have_content('Not confirmed')
   end
 end
