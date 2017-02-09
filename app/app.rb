@@ -71,7 +71,8 @@ class MakersBnB < Sinatra::Base
     @booking = Booking.new(guest_id: session[:user_id], request_text: params[:text], status: 'Not confirmed', space_id: session[:space_id], date: params[:date])
     @space = Space.get(@booking.space_id)
     available_dates = (@space.start_date..@space.end_date)
-    if available_dates.include? Date.strptime(params[:date], '%Y-%m-%d')
+    #unavailable_dates = Booking.all(:space_id => @booking.space_id, :status => "Confirmed").map {|booking| booking.date}
+    if available_dates.include? Date.strptime(params[:date], '%Y-%m-%d') && !(unavailable_dates.include? Date.strptime(params[:date], '%Y-%m-%d'))
       @booking.save
       redirect 'users/requests'
     else
