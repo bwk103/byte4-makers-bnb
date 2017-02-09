@@ -6,7 +6,6 @@
 feature 'Adding picture' do
   scenario 'I can add multiple pictures to a property' do
     create_listing_with_pics
-    save_and_open_page
     # check that images are on the page
   end
 end
