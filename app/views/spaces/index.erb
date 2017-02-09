@@ -8,33 +8,62 @@
   </form>
 <% end %>
 
+<form action='/spaces'>
+  <label>Search availability by date:
+    <input type='date' name='selected_date'>
+  </label>
+    <input type='submit' value='submit_date'>
+</form>
+
 <ul id="spaces">
-  <% @spaces.each do |space| %>
-    <li>
-      Title: <%= space.title %><br />
-      Description: <%= space.description %></br>
-      Price per Night: <%= space.price %></br>
-
-      Available from <%= space.start_date.strftime("%d/%m/%Y") %> to <%= space.end_date.strftime("%d/%m/%Y") %>
-      <br>
-      Picture of a place: <img src='http://lorempixel.com/output/nature-q-c-640-480-<%= space.id % 10 %>.jpg'>
-      <br>
-      Tags: <ul>
-      <% @tags.each do |tag| %>
-        <% if tag.space_id == space.id and tag.name %>
-          <li> <%= tag.name %> </li>
+  <% if @selected_date%>
+    <% @spaces.each do |space| %>
+        <% unless booked_dates(space).include? @selected_date %>
+          <li>
+            Title: <%= space.title %><br />
+            Description: <%= space.description %><br />
+            Price per Night: <%= space.price %><br />
+            Available from <%= space.start_date.strftime("%d/%m/%Y") %> to <%= space.end_date.strftime("%d/%m/%Y") %>
+            <br>
+            Picture of a place: <img src='http://lorempixel.com/output/nature-q-c-640-480-<%= space.id % 10 %>.jpg'>
+            <br>
+            Tags: <ul>
+            <% @tags.each do |tag| %>
+              <% if tag.space_id == space.id and tag.name %>
+                <li> <%= tag.name %> </li>
+              <% end %>
+            <% end %>
+          </ul>
+          </li>
         <% end %>
-      <% end %>
-    </ul>
+    <% end %>
+  <%else%>
+    <% @spaces.each do |space| %>
+      <li>
+        Title: <%= space.title %><br />
+        Description: <%= space.description %><br />
+        Price per Night: <%= space.price %><br />
+        Available from <%= space.start_date.strftime("%d/%m/%Y") %> to <%= space.end_date.strftime("%d/%m/%Y") %>
+        <br>
+        Picture of a place: <img src='http://lorempixel.com/output/nature-q-c-640-480-<%= space.id % 10 %>.jpg'>
+        <br>
+        Tags: <ul>
+        <% @tags.each do |tag| %>
+          <% if tag.space_id == space.id and tag.name %>
+            <li> <%= tag.name %> </li>
+          <% end %>
+        <% end %>
+      </ul>
+      </li>
 
-      <% if current_user %>
+    <% if current_user %>
         <% if space.user_id != current_user.id %>
-          <a href="/spaces/<%=space.id%>">Book</a>
+              <a href="/spaces/<%=space.id%>">Book</a>
         <% else %>
-          <p> This is your space! </p>
+              <p> This is your space! </p>
         <% end %>
-      <% end %>
+    <% end %>
+  <%end%>
+<%end%>
 
-    </li>
-  <% end %>
 </ul>

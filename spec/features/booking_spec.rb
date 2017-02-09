@@ -9,13 +9,12 @@ feature 'Booking' do
   scenario 'user can see the availability on the booking page' do
     book_an_existing_space
     expect(current_path).to have_content '/spaces/'
-    expect(page).to have_content 'Available from: 04/07/2017 to: 08/07/2017'
+    expect(page).to have_content 'Available from: 04/07/2017 to: 18/07/2017'
   end
 
-  # Two tests below seem weird to me - both follow the same path, but one should be for availabkle date, and another should be for non available date.
   scenario 'user can book on an available date' do
     book_an_existing_space
-    fill_in :date, with: '2017-07-05'
+    fill_in :date, with: '2017-07-15'
     click_button 'Request to Book'
     expect(page).to have_content 'Requests you have made:'
   end
@@ -27,16 +26,75 @@ feature 'Booking' do
     expect(page).to have_content 'Unavailable Date.'
   end
 
-end
+  scenario 'if another user has had booking confirmed for same dates - user cannot book' do
+    book_an_existing_space
+    fill_in :date, with: '2017-07-05'
+    click_button 'Request to Book'
+    click_link "Sign Out"
+    login_with_existing_user
+    click_link "Requests"
+    click_link "Confirm / deny"
+    click_button "Confirm"
+    click_link "Sign Out"
+    click_link 'Log In'
+    click_link 'SIGN UP'
+    fill_in :email, with: 'bob@test.com'
+    fill_in :password, with: 'test'
+    fill_in :password_confirmation, with: 'test'
+    click_button 'Sign Up'
+    click_link 'Book'
+    fill_in :date, with: '2017-07-05'
+    click_button 'Request to Book'
+    expect(page).to have_content 'Unavailable Date.'
+  end
 
-# feature 'Booking' do
-#   scenario 'user submit request for a listed space' do
-#     create_listing
-#     log_out_and_login_with_another_user
-#     click_link "Book"
-#     expect(current_path).to have_content '/spaces/'
-#     click_button 'Request to Book'
-#     expect(current_path).to eq '/users/requests'
-#     expect(page).to have_content 'Your booking request has been submitted!'
-#   end
-# end
+#   User Story 7.2
+# --------------
+# As a Guest;
+# So that I can make sure I am booking an available property;
+# I want to see on the listing if it is not available.
+
+  scenario 'user can see unavailable dates on the space page' do
+    book_an_existing_space
+    fill_in :date, with: '2017-07-05'
+    click_button 'Request to Book'
+    click_link "Sign Out"
+    login_with_existing_user
+    click_link "Requests"
+    click_link "Confirm / deny"
+    click_button "Confirm"
+    click_link "Sign Out"
+    click_link 'Log In'
+    click_link 'SIGN UP'
+    fill_in :email, with: 'bob@test.com'
+    fill_in :password, with: 'test'
+    fill_in :password_confirmation, with: 'test'
+    click_button 'Sign Up'
+    click_link 'Book'
+    within('ul#booked_dates') do
+      expect(page).to have_content('05/07/2017')
+    end
+  end
+
+  scenario 'user can filter property according to availability on a specific date' do
+    book_an_existing_space
+    fill_in :date, with: '2017-07-05'
+    click_button 'Request to Book'
+    click_link "Sign Out"
+    login_with_existing_user
+    click_link "Requests"
+    click_link "Confirm / deny"
+    click_button "Confirm"
+    click_link "Sign Out"
+    click_link 'Log In'
+    click_link 'SIGN UP'
+    fill_in :email, with: 'bob@test.com'
+    fill_in :password, with: 'test'
+    fill_in :password_confirmation, with: 'test'
+    click_button 'Sign Up'
+    fill_in :selected_date, with: '2017-07-05'
+    click_button 'submit_date'
+    expect(page).not_to have_content('Casa della Pizza')
+  end
+
+end

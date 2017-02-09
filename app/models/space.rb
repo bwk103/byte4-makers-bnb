@@ -16,4 +16,5 @@ class Space
   has n, :tags
   has n, :pictures
 
+
 end
