@@ -1,28 +1,32 @@
 <h1>Create a New Listing</h1>
 
-<form action='/spaces' method='post' enctype="multipart/form-data">
+<form action='/spaces' method='post' enctype="multipart/form-data" class='form_box'>
   <label for='title'>
-    Title: <input name='title' type='text'>
+    Title: <br>
+    <input name='title' type='text'>
   </label><br />
   <label for='description'>
-    Description: <textarea cols="50" rows="4" name='description'></textarea>
+    Description:<br>
+    <textarea cols="50" rows="4" name='description'></textarea>
   </label><br />
   <label for='price'>
-    Price per Night: <input name='price' type='number'>
+    Price per Night: <br>
+    <input name='price' type='number'>
   </label><br />
   <label for='availability'>
-    Available from <input name='start_date' type='date'> to <input name='end_date' type='date'>
+    Available from <br>
+    <input name='start_date' type='date'> to <input name='end_date' type='date'>
   </label>
   <br>
-  <label>
+  <label class='tags'>
     Choose Tags <br>
-  <label> <input type='checkbox' name='pet_friendly' value='Pet-friendly'>Pet-Friendly</label> <br>
-  <label> <input type='checkbox' name='house' value='House'>House</label> <br>
-  <label> <input type='checkbox' name='has_a_pool' value='Has a pool'>Has a Pool</label> <br>
-  <label> <input type='checkbox' name='wifi' value='WiFi'>WiFi</label> <br>
-  <label> <input type='checkbox' name='has_a_fireplace' value='Has a fireplace'>Has a Fireplace</label> <br>
-  <label> <input type='checkbox' name='flat' value='Flat'>Flat</label> <br>
-  <label> <input type='checkbox' name='central' value='Central'>Central</label> <br>
+  <label> <input type='checkbox' name='pet_friendly' value='Pet-friendly'>Pet-Friendly</label>
+  <label> <input type='checkbox' name='house' value='House'>House</label>
+  <label> <input type='checkbox' name='has_a_pool' value='Has a pool'>Has a Pool</label>
+  <label> <input type='checkbox' name='wifi' value='WiFi'>WiFi</label>
+  <label> <input type='checkbox' name='has_a_fireplace' value='Has a fireplace'>Has a Fireplace</label>
+  <label> <input type='checkbox' name='flat' value='Flat'>Flat</label>
+  <label> <input type='checkbox' name='central' value='Central'>Central</label>
   </label>
   <br>
 

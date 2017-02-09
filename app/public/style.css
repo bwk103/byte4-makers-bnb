@@ -1,0 +1,130 @@
+html, body, h1, h2, h3, h4, h5, h6, p, input[submit] {
+  font-family: 'Raleway', sans-serif;
+}
+
+html, body {
+  font-size: 16px;
+}
+
+p, h1, h3 {
+  text-align: center;
+}
+
+.logo{
+  height: 12vh;
+  position: absolute;
+  margin-left: 100px;
+}
+
+header {
+  height: 15vh;
+  margin: 0 auto;
+  padding: 0;
+  top: 0;
+}
+
+.menu {
+  padding: 0;
+  overflow: hidden;
+  position: absolute;
+  top: 5vh;
+  right: 100px;
+}
+
+.menu_item {
+  float: right;
+  width: 80px;
+  list-style: none;
+  color: black;
+  text-decoration: none;
+  border: 2px solid darkred;
+  margin: 2px;
+  padding: 2px;
+  text-align: center;
+}
+
+.link_button {
+  float: right;
+  width: 80px;
+  color: black;
+  text-decoration: none;
+  border: 2px solid darkgrey;
+  background-color: #eeeeee;
+  margin: 20px;
+  padding: 2px;
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.hello {
+  text-align: right;
+  top: 0;
+}
+
+/* SignUp page */
+
+.form_box {
+  width: 360px;
+  margin: 40px auto;
+  text-align: center;
+  border: 2px solid darkred;
+  padding: 20px;
+}
+
+input[type='email' i], input[type='password' i], textarea {
+  width: 70%;
+  margin-top: 10px;
+}
+
+input {
+  margin-bottom: 30px;
+}
+
+
+input[type="submit" i] {
+  width: 50%;
+  color: black;
+  border: 2px solid darkred;
+  margin: 2px;
+  padding: 2px;
+  text-align: center;
+  background-color: white;
+  font-size: 1em;
+}
+
+.tags {
+  display: inline-block;
+}
+
+.tag {
+  text-align: center;
+  display: inline-block;
+}
+
+/* Listing */
+.listing {
+  border: 2px solid darkred;
+}
+
+.listing img {
+  width: 260px;
+  margin-left: 20px;
+}
+
+.listings li {
+  list-style: none;
+  width: 300px;
+  align-content: center;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+.listings {
+  column-count: 3;
+  width: 960px;
+  margin: 0 auto;
+}

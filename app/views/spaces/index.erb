@@ -1,39 +1,46 @@
-<h1>Hello MakersBnB!</h1>
+<h1>Hello CapyBnB!</h1>
 
 <h3>Spaces</h3>
 
 <%if current_user %>
-  <form action='/spaces/new'>
+  <form action='/spaces/new' class='form_box'>
   <input type='submit' value='List New Space'>
   </form>
 <% end %>
 
-<form action='/spaces'>
+<form action='/spaces' class='form_box'>
   <label>Search availability by date:
     <input type='date' name='selected_date'>
   </label>
     <input type='submit' value='Submit date'>
 </form>
 
-<ul id="spaces">
-  <% if @selected_date %>
+<ul id="spaces" class='listings'>
+  <% if @selected_date%>
     <% @spaces.each do |space| %>
-        <% unless (booked_dates(space).include? @selected_date) || !(available_period(space).include? @selected_date) %>
-          <li>
-            Title: <%= space.title %><br />
-            Description: <%= space.description %><br />
-            Price per Night: <%= space.price %><br />
-            Available from <%= space.start_date.strftime("%d/%m/%Y") %> to <%= space.end_date.strftime("%d/%m/%Y") %>
+        <% unless booked_dates(space).include? @selected_date %>
+          <li class='listing'>
+            <p><b>Title:</b> <%= space.title %><br />
+            <b>Description:</b> <%= space.description %><br />
+            <b>Price per Night:</b> <%= space.price %><br />
+            <b>Available from</b> <%= space.start_date.strftime("%d/%m/%Y") %> to <%= space.end_date.strftime("%d/%m/%Y") %>
+            <br></p>
+            <img src='http://lorempixel.com/output/nature-q-c-640-480-<%= space.id % 10 %>.jpg'>
             <br>
-            Picture of a place: <img src='http://lorempixel.com/output/nature-q-c-640-480-<%= space.id % 10 %>.jpg'>
-            <br>
-            Tags: <ul>
-            <% @tags.each do |tag| %>
-              <% if tag.space_id == space.id and tag.name %>
-                <li> <%= tag.name %> </li>
-              <% end %>
+            <p><b>Tags:</b></p><br><ul class='tag'>
+                <% @tags.each do |tag| %>
+                  <% if tag.space_id == space.id and tag.name %>
+                    <li> <%= tag.name %> </li>
+                  <% end %>
+                <% end %>
+              </ul>
+            <% if current_user %>
+                <% if space.user_id != current_user.id %>
+                      <a href="/spaces/<%=space.id%>">Book</a>
+                <% else %>
+                      <p> This is your space! </p>
+                <% end %>
             <% end %>
-          </ul>
           </li>
 
           <% if current_user %>
@@ -47,30 +54,29 @@
     <% end %>
   <%else%>
     <% @spaces.each do |space| %>
-      <li>
-        Title: <%= space.title %><br />
-        Description: <%= space.description %><br />
-        Price per Night: <%= space.price %><br />
-        Available from <%= space.start_date.strftime("%d/%m/%Y") %> to <%= space.end_date.strftime("%d/%m/%Y") %>
+      <li class='listing'>
+        <p><b>Title:</b> <%= space.title %><br />
+        <b>Description:</b> <%= space.description %><br />
+        <b>Price per Night:</b> <%= space.price %><br />
+        <b>Available from</b> <%= space.start_date.strftime("%d/%m/%Y") %> to <%= space.end_date.strftime("%d/%m/%Y") %>
+        <br></p>
+        <img src='http://lorempixel.com/output/nature-q-c-640-480-<%= space.id % 10 %>.jpg'>
         <br>
-        Picture of a place: <img src='http://lorempixel.com/output/nature-q-c-640-480-<%= space.id % 10 %>.jpg'>
-        <br>
-        Tags: <ul>
+        <p><b>Tags:</b></p><br><ul class='tag'>
         <% @tags.each do |tag| %>
           <% if tag.space_id == space.id and tag.name %>
             <li> <%= tag.name %> </li>
           <% end %>
         <% end %>
-      </ul>
-      </li>
-
-    <% if current_user %>
-        <% if space.user_id != current_user.id %>
-              <a href="/spaces/<%=space.id%>">Book</a>
-        <% else %>
-              <p> This is your space! </p>
+        </ul>
+        <% if current_user %>
+            <% if space.user_id != current_user.id %>
+                  <a class='link_button' href="/spaces/<%=space.id%>">Book</a>
+            <% else %>
+                  <p> This is your space! </p>
+            <% end %>
         <% end %>
-    <% end %>
+      </li>
   <%end%>
 <%end%>
 
