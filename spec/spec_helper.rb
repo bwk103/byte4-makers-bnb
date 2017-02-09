@@ -10,6 +10,7 @@ require 'capybara'
 require 'capybara/rspec'
 require 'rspec'
 require 'database_cleaner'
+require 'carrierwave/datamapper'
 
 require 'coveralls'
 require 'simplecov'
@@ -17,6 +18,7 @@ require './app/models/user.rb'
 require './app/models/space.rb'
 require './app/models/booking.rb'
 require './app/models/tag.rb'
+require './app/models/picture.rb'
 require 'web_helper.rb'
 
 SimpleCov.formatters = [

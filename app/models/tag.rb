@@ -4,6 +4,5 @@ class Tag
   property :id,   Serial
   property :name, String
 
-
   belongs_to :space
 end

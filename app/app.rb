@@ -32,6 +32,7 @@ class MakersBnB < Sinatra::Base
 
   post '/spaces' do
     space = Space.create(title: params[:title], description: params[:description],price: params[:price], user_id: session[:user_id], start_date: params[:start_date], end_date: params[:end_date])
+    p Picture.create(source: params[:myfile], space_id: space.id)
     Tag.create(name: params[:pet_friendly], space_id: space.id )
     Tag.create(name: params[:house], space_id: space.id )
     Tag.create(name: params[:has_a_pool], space_id: space.id )

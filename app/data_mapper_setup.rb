@@ -9,6 +9,7 @@ require 'sinatra/flash'
 
 require 'encrypted_cookie'
 require 'bcrypt'
+require 'carrierwave/datamapper'
 
 require 'pry'
 require_relative 'models/user.rb'
@@ -17,6 +18,7 @@ require './app/models/user'
 require './app/models/space'
 require './app/models/booking'
 require './app/models/tag'
+require './app/models/picture'
 
 
 env = ENV['RACK_ENV'] || 'development'
