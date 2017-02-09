@@ -12,7 +12,7 @@
   <label>Search availability by date:
     <input type='date' name='selected_date'>
   </label>
-    <input type='submit' value='submit_date'>
+    <input type='submit' value='Submit date'>
 </form>
 
 <ul id="spaces" class='listings'>
@@ -42,6 +42,14 @@
                 <% end %>
             <% end %>
           </li>
+
+          <% if current_user %>
+              <% if space.user_id != current_user.id %>
+                    <a href="/spaces/<%=space.id%>">Book</a>
+              <% else %>
+                    <p> This is your space! </p>
+              <% end %>
+          <% end %>
         <% end %>
     <% end %>
   <%else%>

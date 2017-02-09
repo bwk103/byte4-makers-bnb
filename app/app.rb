@@ -11,9 +11,12 @@ class MakersBnB < Sinatra::Base
     end
 
     def booked_dates(space)
-        @booked_dates = space.bookings.map {|booking| booking.date if booking.status == "Confirmed"}
+        space.bookings.map {|booking| booking.date if booking.status == "Confirmed"}
     end
 
+    def available_period(space)
+      (space.start_date..space.end_date)
+    end
   end
 
   get '/' do
@@ -37,7 +40,6 @@ class MakersBnB < Sinatra::Base
 
   post '/spaces' do
     space = Space.create(title: params[:title], description: params[:description],price: params[:price], user_id: session[:user_id], start_date: params[:start_date], end_date: params[:end_date])
-    session[:filename] = params[:myfile][:filename]
     Tag.create(name: params[:pet_friendly], space_id: space.id )
     Tag.create(name: params[:house], space_id: space.id )
     Tag.create(name: params[:has_a_pool], space_id: space.id )
@@ -56,7 +58,7 @@ class MakersBnB < Sinatra::Base
   end
 
   get '/spaces' do
-    if params[:selected_date]
+    if (params[:selected_date]) && (params[:selected_date] != "")
       @selected_date = Date.strptime(params[:selected_date], '%Y-%m-%d')
     end
     @spaces = Space.all
