@@ -8,29 +8,40 @@
   </form>
 <% end %>
 
-<form action='/spaces/new' method="post">
+<form action='/spaces'>
   <label>Search availability by date:
     <input type='date' name='selected_date'>
   </label>
+    <input type='submit' name='submit_date'>
 </form>
 
 <ul id="spaces">
-  <% @spaces.each do |space| %>
-    <li>
-      Title: <%= space.title %><br />
-      Description: <%= space.description %></br>
-      Price per Night: <%= space.price %></br>
-
-      Available from <%= space.start_date.strftime("%d/%m/%Y") %> to <%= space.end_date.strftime("%d/%m/%Y") %>
-
-      <% if current_user %>
-        <% if space.user_id != current_user.id %>
-          <a href="/spaces/<%=space.id%>">Book</a>
-        <% else %>
-          <p> This is your space! </p>
+  <% if @selected_date%>
+    <% @spaces.each do |space| %>
+        <% unless booked_dates(space).include? @selected_date %>
+          <li>
+            Title: <%= space.title %><br />
+            Description: <%= space.description %></br>
+            Price per Night: <%= space.price %></br>
+          </li>
         <% end %>
-      <% end %>
+    <% end %>
+  <%else%>
+    <% @spaces.each do |space| %>
+      <li>
+        Title: <%= space.title %><br />
+        Description: <%= space.description %></br>
+        Price per Night: <%= space.price %></br>
+      </li>
 
-    </li>
-  <% end %>
+    <% if current_user %>
+        <% if space.user_id != current_user.id %>
+              <a href="/spaces/<%=space.id%>">Book</a>
+        <% else %>
+              <p> This is your space! </p>
+        <% end %>
+    <% end %>
+  <%end%>
+<%end%>
+
 </ul>

@@ -14,4 +14,5 @@ class Space
   belongs_to :user
   has n, :bookings
 
+
 end

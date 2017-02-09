@@ -9,6 +9,11 @@ class MakersBnB < Sinatra::Base
     def current_user
       @current_user ||= User.get(session[:user_id])
     end
+
+    def booked_dates(space)
+        @booked_dates = space.bookings.map {|booking| booking.date if booking.status == "Confirmed"}
+    end
+
   end
 
   get '/' do
@@ -43,6 +48,9 @@ class MakersBnB < Sinatra::Base
   end
 
   get '/spaces' do
+    if params[:selected_date]
+      @selected_date = Date.strptime(params[:selected_date], '%Y-%m-%d')
+    end
     @spaces = Space.all
     erb :'spaces/index'
   end
