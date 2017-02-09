@@ -93,7 +93,7 @@ feature 'Booking' do
     fill_in :password_confirmation, with: 'test'
     click_button 'Sign Up'
     fill_in :selected_date, with: '2017-07-05'
-    click_button 'submit_date'
+    click_button 'Submit date'
     expect(page).not_to have_content('Casa della Pizza')
   end
 

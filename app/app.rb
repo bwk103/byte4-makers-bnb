@@ -58,7 +58,7 @@ class MakersBnB < Sinatra::Base
   end
 
   get '/spaces' do
-    if params[:selected_date]
+    if (params[:selected_date]) && (params[:selected_date] != "")
       @selected_date = Date.strptime(params[:selected_date], '%Y-%m-%d')
     end
     @spaces = Space.all
