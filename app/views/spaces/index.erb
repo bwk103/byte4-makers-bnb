@@ -17,6 +17,11 @@
 
       Available from <%= space.start_date.strftime("%d/%m/%Y") %> to <%= space.end_date.strftime("%d/%m/%Y") %>
       <br>
+      <!-- <% if @picture and @picture.source %> -->
+      <%= @filename %>
+      Picture of a place: <img src='uploads/<%= @filename %>'>
+      <!-- <% end %> -->
+      <br>
       Tags: <ul>
       <% @tags.each do |tag| %>
         <% if tag.space_id == space.id and tag.name %>

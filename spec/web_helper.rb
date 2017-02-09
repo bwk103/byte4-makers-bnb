@@ -33,6 +33,7 @@ def create_listing
   fill_in(:end_date, with: '08-07-2017')
   check('Pet-Friendly')
   check('House')
+  attach_file 'myfile', "images/image1.JPG"
   click_button('Create Listing')
 end
 
