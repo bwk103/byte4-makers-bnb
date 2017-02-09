@@ -8,6 +8,12 @@
   </form>
 <% end %>
 
+<form action='/spaces/new' method="post">
+  <label>Search availability by date:
+    <input type='date' name='selected_date'>
+  </label>
+</form>
+
 <ul id="spaces">
   <% @spaces.each do |space| %>
     <li>
