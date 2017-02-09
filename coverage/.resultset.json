@@ -43,6 +43,22 @@
         null,
         null
       ],
+      "/Users/Sim/Projects/MainCourse/Week6/byte4-makers-bnb/spec/features/adding_tags_spec.rb": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null
+      ],
       "/Users/Sim/Projects/MainCourse/Week6/byte4-makers-bnb/spec/features/booking_spec.rb": [
         1,
         null,
@@ -246,6 +262,6 @@
         null
       ]
     },
-    "timestamp": 1486637185
+    "timestamp": 1486642164
   }
 }

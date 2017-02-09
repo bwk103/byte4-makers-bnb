@@ -16,6 +16,7 @@ require 'simplecov'
 require './app/models/user.rb'
 require './app/models/space.rb'
 require './app/models/booking.rb'
+require './app/models/tag.rb'
 require 'web_helper.rb'
 
 SimpleCov.formatters = [

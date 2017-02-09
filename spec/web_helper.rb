@@ -31,6 +31,8 @@ def create_listing
   fill_in(:price, with: 89.91)
   fill_in(:start_date, with: '04-07-2017')
   fill_in(:end_date, with: '08-07-2017')
+  check('Pet-Friendly')
+  check('House')
   click_button('Create Listing')
 end
 

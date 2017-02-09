@@ -16,6 +16,7 @@ require_relative 'models/user.rb'
 require './app/models/user'
 require './app/models/space'
 require './app/models/booking'
+require './app/models/tag'
 
 
 env = ENV['RACK_ENV'] || 'development'
