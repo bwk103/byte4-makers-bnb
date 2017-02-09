@@ -4,6 +4,16 @@
 <p>Price per night: <%= @space.price %></p>
 
 <p> Available from: <%= @space.start_date.strftime("%d/%m/%Y") %> to: <%= @space.end_date.strftime("%d/%m/%Y") %></p>
+<p> Unavailable on:
+    <ul id="booked_dates">
+      <% if @unavailable_dates %>
+        <% @unavailable_dates.each do |booking| %>
+          <li> <%= booking.date.strftime("%d/%m/%Y") %>
+          </li>
+        <% end %>
+      <% end %>
+</p>
+
 
 
 <form action='/requests' method='post'>

@@ -37,6 +37,7 @@ class MakersBnB < Sinatra::Base
 
   get '/spaces/:id' do
     @space = Space.get(params[:id])
+    @unavailable_dates = Booking.all(:space_id => @space.id, :status => "Confirmed")
     session[:space_id] = params[:id]
     erb :'spaces/space_page'
   end
@@ -72,16 +73,12 @@ class MakersBnB < Sinatra::Base
     @space = Space.get(@booking.space_id)
     available_dates = (@space.start_date..@space.end_date)
     unavailable_dates = Booking.all(:space_id => @booking.space_id, :status => "Confirmed").map {|booking| booking.date}
-    # p available_dates.each { |date| p date }
-    # p unavailable_dates.each { |date| p date }
-    # p Date.strptime(params[:date], '%Y-%m-%d')
     if (available_dates.include? @booking.date) && !(unavailable_dates.include? @booking.date)
       @booking.save
       redirect 'users/requests'
     else
       flash.now[:errors] = 'Unavailable Date.'
       erb :'spaces/space_page'
-      #redirect '/spaces/space.id'
     end
   end
 
@@ -98,7 +95,6 @@ class MakersBnB < Sinatra::Base
 
   post '/users/requests/confirmation/confirm' do
     booking = Booking.get(session[:booking_id])
-    # binding.pry
     if params[:confirm] == 'Confirm'
       booking.status = 'Confirmed'
     elsif params[:deny] == 'Deny'

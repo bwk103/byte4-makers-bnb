@@ -54,16 +54,26 @@ feature 'Booking' do
 # So that I can make sure I am booking an available property;
 # I want to see on the listing if it is not available.
 
-end
+  scenario 'user can see unavailable dates on the space page' do
+    book_an_existing_space
+    fill_in :date, with: '2017-07-05'
+    click_button 'Request to Book'
+    click_link "Sign Out"
+    login_with_existing_user
+    click_link "Requests"
+    click_link "Confirm / deny"
+    click_button "Confirm"
+    click_link "Sign Out"
+    click_link 'Log In'
+    click_link 'SIGN UP'
+    fill_in :email, with: 'bob@test.com'
+    fill_in :password, with: 'test'
+    fill_in :password_confirmation, with: 'test'
+    click_button 'Sign Up'
+    click_link 'Book'
+    within('ul#booked_dates') do
+      expect(page).to have_content('05/07/2017')
+    end
+  end
 
-# feature 'Booking' do
-#   scenario 'user submit request for a listed space' do
-#     create_listing
-#     log_out_and_login_with_another_user
-#     click_link "Book"
-#     expect(current_path).to have_content '/spaces/'
-#     click_button 'Request to Book'
-#     expect(current_path).to eq '/users/requests'
-#     expect(page).to have_content 'Your booking request has been submitted!'
-#   end
-# end
+end
