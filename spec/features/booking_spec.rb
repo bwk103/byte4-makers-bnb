@@ -76,4 +76,25 @@ feature 'Booking' do
     end
   end
 
+  scenario 'user can filter property according to availability on a specific date' do
+    book_an_existing_space
+    fill_in :date, with: '2017-07-05'
+    click_button 'Request to Book'
+    click_link "Sign Out"
+    login_with_existing_user
+    click_link "Requests"
+    click_link "Confirm / deny"
+    click_button "Confirm"
+    click_link "Sign Out"
+    click_link 'Log In'
+    click_link 'SIGN UP'
+    fill_in :email, with: 'bob@test.com'
+    fill_in :password, with: 'test'
+    fill_in :password_confirmation, with: 'test'
+    click_button 'Sign Up'
+    fill_in :selected_date, with: '2017-07-05'
+    click_button 'submit_date'
+    expect(page).not_to have_content('Casa della Pizza')
+  end
+
 end
