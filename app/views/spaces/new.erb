@@ -1,6 +1,6 @@
 <h1>Create a New Listing</h1>
 
-<form action='/spaces' method='post'>
+<form action='/spaces' method='post' enctype="multipart/form-data">
   <label for='title'>
     Title: <input name='title' type='text'>
   </label><br />
@@ -13,5 +13,22 @@
   <label for='availability'>
     Available from <input name='start_date' type='date'> to <input name='end_date' type='date'>
   </label>
+  <br>
+  <label>
+    Choose Tags <br>
+  <label> <input type='checkbox' name='pet_friendly' value='Pet-friendly'>Pet-Friendly</label> <br>
+  <label> <input type='checkbox' name='house' value='House'>House</label> <br>
+  <label> <input type='checkbox' name='has_a_pool' value='Has a pool'>Has a Pool</label> <br>
+  <label> <input type='checkbox' name='wifi' value='WiFi'>WiFi</label> <br>
+  <label> <input type='checkbox' name='has_a_fireplace' value='Has a fireplace'>Has a Fireplace</label> <br>
+  <label> <input type='checkbox' name='flat' value='Flat'>Flat</label> <br>
+  <label> <input type='checkbox' name='central' value='Central'>Central</label> <br>
+  </label>
+  <br>
+  <p>Do you want to add picures? Go ahead!</p>
+  <br>
+  <input type='file' name='myfile'>
+  <br>
+
   <input type='submit' value='Create Listing'>
 </form>

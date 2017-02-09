@@ -27,4 +27,6 @@ group :development do
   gem 'pry'
   gem 'bcrypt'
   gem 'encrypted_cookie'
+  gem 'carrierwave-datamapper', :require => 'carrierwave/datamapper'
+  gem 'mini_magick'
 end

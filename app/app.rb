@@ -36,7 +36,15 @@ class MakersBnB < Sinatra::Base
   end
 
   post '/spaces' do
-    Space.create(title: params[:title], description: params[:description],price: params[:price], user_id: session[:user_id], start_date: params[:start_date], end_date: params[:end_date])
+    space = Space.create(title: params[:title], description: params[:description],price: params[:price], user_id: session[:user_id], start_date: params[:start_date], end_date: params[:end_date])
+    session[:filename] = params[:myfile][:filename]
+    Tag.create(name: params[:pet_friendly], space_id: space.id )
+    Tag.create(name: params[:house], space_id: space.id )
+    Tag.create(name: params[:has_a_pool], space_id: space.id )
+    Tag.create(name: params[:wifi], space_id: space.id )
+    Tag.create(name: params[:flat], space_id: space.id )
+    Tag.create(name: params[:central], space_id: space.id )
+    Tag.create(name: params[:has_a_fireplace], space_id: space.id )
     redirect '/spaces'
   end
 
@@ -52,6 +60,8 @@ class MakersBnB < Sinatra::Base
       @selected_date = Date.strptime(params[:selected_date], '%Y-%m-%d')
     end
     @spaces = Space.all
+    @tags = Tag.all
+    @filename = session[:filename]
     erb :'spaces/index'
   end
 

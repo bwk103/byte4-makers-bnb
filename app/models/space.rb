@@ -13,6 +13,8 @@ class Space
 
   belongs_to :user
   has n, :bookings
+  has n, :tags
+  has n, :pictures
 
 
 end

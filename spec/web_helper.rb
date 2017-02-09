@@ -31,7 +31,24 @@ def create_listing
   fill_in(:price, with: 89.91)
   fill_in(:start_date, with: '04-07-2017')
   fill_in(:end_date, with: '18-07-2017')
+  check('Pet-Friendly')
+  check('House')
+  attach_file 'myfile', "images/image1.JPG"
   click_button('Create Listing')
+end
+
+def create_listing_with_pics
+  signup_with_valid_email
+  click_button 'List New Space'
+  fill_in(:title, with: 'Casa della Pizza')
+  fill_in(:description, with: 'Una casa con la mia pizza preferita, e mi piace.')
+  fill_in(:price, with: 89.91)
+  fill_in(:start_date, with: '04-07-2017')
+  fill_in(:end_date, with: '08-07-2017')
+  check('Pet-Friendly')
+  check('House')
+  attach_file 'myfile', "images/image1.JPG"
+  click_button 'Create Listing'
 end
 
 def log_out_and_login_with_another_user

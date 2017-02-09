@@ -21,9 +21,19 @@
         <% unless booked_dates(space).include? @selected_date %>
           <li>
             Title: <%= space.title %><br />
-            Description: <%= space.description %></br>
-            Price per Night: <%= space.price %></br>
+            Description: <%= space.description %><br />
+            Price per Night: <%= space.price %><br />
             Available from <%= space.start_date.strftime("%d/%m/%Y") %> to <%= space.end_date.strftime("%d/%m/%Y") %>
+            <br>
+            Picture of a place: <img src='http://lorempixel.com/output/nature-q-c-640-480-<%= space.id % 10 %>.jpg'>
+            <br>
+            Tags: <ul>
+            <% @tags.each do |tag| %>
+              <% if tag.space_id == space.id and tag.name %>
+                <li> <%= tag.name %> </li>
+              <% end %>
+            <% end %>
+          </ul>
           </li>
         <% end %>
     <% end %>
@@ -31,9 +41,19 @@
     <% @spaces.each do |space| %>
       <li>
         Title: <%= space.title %><br />
-        Description: <%= space.description %></br>
-        Price per Night: <%= space.price %></br>
+        Description: <%= space.description %><br />
+        Price per Night: <%= space.price %><br />
         Available from <%= space.start_date.strftime("%d/%m/%Y") %> to <%= space.end_date.strftime("%d/%m/%Y") %>
+        <br>
+        Picture of a place: <img src='http://lorempixel.com/output/nature-q-c-640-480-<%= space.id % 10 %>.jpg'>
+        <br>
+        Tags: <ul>
+        <% @tags.each do |tag| %>
+          <% if tag.space_id == space.id and tag.name %>
+            <li> <%= tag.name %> </li>
+          <% end %>
+        <% end %>
+      </ul>
       </li>
 
     <% if current_user %>
