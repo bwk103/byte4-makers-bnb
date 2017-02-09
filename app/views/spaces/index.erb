@@ -17,10 +17,7 @@
 
       Available from <%= space.start_date.strftime("%d/%m/%Y") %> to <%= space.end_date.strftime("%d/%m/%Y") %>
       <br>
-      <!-- <% if @picture and @picture.source %> -->
-      <%= @filename %>
-      Picture of a place: <img src='uploads/<%= @filename %>'>
-      <!-- <% end %> -->
+      Picture of a place: <img src='http://lorempixel.com/output/nature-q-c-640-480-<%= space.id % 10 %>.jpg'>
       <br>
       Tags: <ul>
       <% @tags.each do |tag| %>
