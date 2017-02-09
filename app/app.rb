@@ -11,9 +11,12 @@ class MakersBnB < Sinatra::Base
     end
 
     def booked_dates(space)
-        @booked_dates = space.bookings.map {|booking| booking.date if booking.status == "Confirmed"}
+        space.bookings.map {|booking| booking.date if booking.status == "Confirmed"}
     end
 
+    def available_period(space)
+      (space.start_date..space.end_date)
+    end
   end
 
   get '/' do
