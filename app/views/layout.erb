@@ -1,8 +1,9 @@
 <!DOCTYPE html>
  <html>
    <head>
-    <title>MakersBnB</title>
-    <link rel="stylesheet" type="text/css" href="style.css"/>
+    <title>CapyBnB</title>
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/style.css">
    </head>
     <body>
 
@@ -18,12 +19,12 @@
             <li class='menu_item'><a href='/signout'>Sign Out</a></li>
           </ul>
 
-          <h3>Hello, <%= current_user.email %>!</h3>
+          <h3 class='hello'>Hello, <%= current_user.email %>!</h3>
 
           <% else %>
           <ul class='menu'>
-            <li><a href='/about'>About</a></li>
-            <li><a href='/users/login'>Log In</a></li>
+            <li class='menu_item'><a href='/about'>About</a></li>
+            <li class='menu_item'><a href='/users/login'>Log In</a></li>
           </ul>
           <% end %>
 
