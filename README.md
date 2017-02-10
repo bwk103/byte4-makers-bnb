@@ -1,4 +1,28 @@
-## Makers BnB
+## CapyBnB
+
+![CapyBnB Logo](./images/CapyBnb_logo.png)
+
+A different AirBnb.
+
+* How to download and run CapyBnb locally:
+
+```
+$ git clone git@github.com:sim-ware/byte4-makers-bnb.git
+$ cd byte4-makers-bnb
+$ createdb makers_bnb_development
+$ createdb makers_bnb_test
+$ bundle install
+$ rackup -p 4567
+```
+visit <http://localhost:4567/>
+
+* Enjoy CapyBnB online on  **Heroku**: https://capybnb.herokuapp.com/
+
+Chitter uses the following **technologies**:
+* `gem 'data_mapper'` - [DataMapper](http://datamapper.org/) a Object-Relational Map (ORM) that 'speaks ruby' to interact with databases.
+* `gem 'dm-postgres-adapter'` - [PostgresQL](https://www.postgresql.org/) an open source relational database management system (DBMS).
+* `gem 'bcrypt'` - [BCrypt](https://github.com/codahale/bcrypt-ruby) a library to encrypt/decrypt strings to keep passwords safe.
+* And - of course - [Sinatra](http://www.sinatrarb.com/) to develop Ruby Web Applications.
 
 #### 1.0 User can sign-in and sign-up
 ```
