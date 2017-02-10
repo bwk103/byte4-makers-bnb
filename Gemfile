@@ -16,7 +16,7 @@ group :test do
   gem 'factory_girl'
 end
 
-group :development do
+# group :development do
   gem 'data_mapper', '~> 1.2.0'
   gem 'dm-postgres-adapter'
   gem 'rainbow', '>=2.1.0', '<2.2.0'
@@ -29,4 +29,4 @@ group :development do
   gem 'encrypted_cookie'
   gem 'carrierwave-datamapper', :require => 'carrierwave/datamapper'
   gem 'mini_magick'
-end
+# end
