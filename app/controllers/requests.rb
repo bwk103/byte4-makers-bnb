@@ -25,12 +25,7 @@ class MakersBnB < Sinatra::Base
 
   post '/users/requests/confirmation/confirm' do
     booking = Booking.get(session[:booking_id])
-    booking.booking_confirmation(params[:confirm] || params[:deny])
-    # if params[:confirm] == 'Confirm'
-    #   booking.status = 'Confirmed'
-    # elsif params[:deny] == 'Deny'
-    #   booking.status = 'Denied'
-    # end
+    booking.booking_confirmation(params[:status])
     booking.save
     redirect 'users/requests'
   end
