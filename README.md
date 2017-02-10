@@ -5,8 +5,11 @@
 ### Dev Team
 
 [Ben Kielty](https://github.com/bwk103)
+
 [Ekaterina Loshchinina](https://github.com/kateloschinina)
+
 [Irene Canuti](https://github.com/nenoch)
+
 [Samir Gossain](https://github.com/sim-ware)
 
 ### How to download and run CapyBnb locally:
