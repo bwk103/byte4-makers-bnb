@@ -16,9 +16,7 @@
 </form>
 
 <ul id="spaces" class='listings'>
-  <% if @selected_date%>
     <% @spaces.each do |space| %>
-        <% unless (booked_dates(space).include? @selected_date) || !(available_period(space).include? @selected_date) %>
           <li class='listing'>
             <p><b>Title:</b> <%= space.title %><br />
             <b>Description:</b> <%= space.description %><br />
@@ -42,43 +40,5 @@
                 <% end %>
             <% end %>
           </li>
-
-          <% if current_user %>
-              <% if space.user_id != current_user.id %>
-                    <a href="/spaces/<%=space.id%>">Book</a>
-              <% else %>
-                    <p> This is your space! </p>
-              <% end %>
-          <% end %>
         <% end %>
-    <% end %>
-  
-  <!-- <%else%>
-    <% @spaces.each do |space| %>
-      <li class='listing'>
-        <p><b>Title:</b> <%= space.title %><br />
-        <b>Description:</b> <%= space.description %><br />
-        <b>Price per Night:</b> <%= space.price %><br />
-        <b>Available from</b> <%= space.start_date.strftime("%d/%m/%Y") %> to <%= space.end_date.strftime("%d/%m/%Y") %>
-        <br></p>
-        <img src='http://lorempixel.com/output/nature-q-c-640-480-<%= space.id % 10 %>.jpg'>
-        <br>
-        <p><b>Tags:</b></p><br><ul class='tag'>
-        <% @tags.each do |tag| %>
-          <% if tag.space_id == space.id and tag.name %>
-            <li> <%= tag.name %> </li>
-          <% end %>
-        <% end %>
-        </ul>
-        <% if current_user %>
-            <% if space.user_id != current_user.id %>
-                  <a class='link_button' href="/spaces/<%=space.id%>">Book</a>
-            <% else %>
-                  <p> This is your space! </p>
-            <% end %>
-        <% end %>
-      </li>
-  <%end%>
-<%end%> -->
-
 </ul>

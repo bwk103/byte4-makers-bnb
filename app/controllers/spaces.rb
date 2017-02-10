@@ -12,6 +12,7 @@ class MakersBnB < Sinatra::Base
 
   get '/spaces/:id' do
     @space = Space.get(params[:id])
+    @tags = Tag.all
     session[:space_id] = params[:id]
     erb :'spaces/space_page'
   end
