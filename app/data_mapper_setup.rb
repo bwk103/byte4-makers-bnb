@@ -20,8 +20,8 @@ require './app/models/tag'
 require './app/models/picture'
 
 
-# env = ENV['RACK_ENV'] || 'development'
+env = ENV['RACK_ENV'] || 'development'
 
-DataMapper.setup(:default, ENV['DATABASE_URL'] || "postgres://localhost/makers_bnb_#{ENV["RACK_ENV"]}")
+DataMapper.setup(:default, ENV['DATABASE_URL'] || "postgres://localhost/makers_bnb_#{env}")
 DataMapper.finalize
 DataMapper.auto_upgrade! # !!!!
