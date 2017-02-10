@@ -14,6 +14,7 @@ group :test do
   gem 'rubocop-rspec'
   gem 'rubocop'
   gem 'factory_girl'
+  gem 'sinatra-partial'
 end
 
 # group :development do
