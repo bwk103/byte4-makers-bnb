@@ -13,6 +13,13 @@
         <% end %>
       <% end %>
 </p>
+<p><b>Tags:</b></p><br><ul class="tag">
+    <% @tags.each do |tag| %>
+      <% if tag.space_id == @space.id and tag.name %>
+        <li> <%= tag.name %> </li>
+      <% end %>
+    <% end %>
+  </ul>
 
 
 

@@ -137,16 +137,30 @@ a, a:hover {
 /* Listing */
 
 .row {
-  width: 1024px;
+  max-width: 1024px;
   margin: auto;
 }
+
+.col-xs-6 {
+  position: relative;
+  min-height: 1px;
+  padding-right: 5px;
+  padding-left: 5px;
+}
+
 .listing {
   border: 2px solid darkred;
-  margin: 10px;
+  margin: 20px 5px 20px 5px;
+  min-height: 420px;
+  padding: 1em;
 }
 
 .listing img {
-  width: 260px;
+  width: 90%;
+}
+
+.listings {
+  display: block;
 }
 
 .listings li {
