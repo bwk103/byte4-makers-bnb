@@ -1,0 +1,154 @@
+/* Typography */
+
+html {
+  font-family: 'Raleway', sans-serif;
+  color: black;
+}
+
+html, body {
+  font-size: 16px;
+}
+
+a {
+  color: black;
+}
+
+h1 {
+  margin-top: 2em;
+}
+
+h4 {
+  width: 720px;
+  margin: 60px auto;
+  line-height: 2em;
+}
+
+/* Top Bar */
+
+.logo{
+  height: 12vh;
+  position: absolute;
+  margin-left: 100px;
+}
+
+header {
+  height: 15vh;
+}
+
+/* Navigation */
+
+.menu {
+  top: 5vh;
+  right: 100px;
+}
+
+.menu_item {
+  float: right;
+  border: 2px solid darkred;
+  margin-right: 10px;
+  background-color: white;
+}
+
+/* Forms */
+
+/* SignUp page */
+
+.form_box {
+  width: 340px;
+  margin: 40px auto;
+  border: 2px solid darkred;
+  padding: 20px;
+}
+
+input[type='email' i], input[type='password' i], textarea {
+  margin-top: 10px;
+  width: 100%;
+}
+
+input {
+  margin-bottom: 30px;
+}
+
+input[type="submit" i] {
+  width: 50%;
+  color: black;
+  border: 2px solid darkred;
+  margin: 2px;
+  padding: 2px;
+  background-color: white;
+}
+
+input[type="submit" i]:hover {
+  background-color: #eeeeee;
+}
+
+/* Spaces page */
+
+input[type="date" i] {
+  font-weight: 300;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.tags {
+  display: inline-block;
+}
+
+.tag {
+  text-align: center;
+  display: inline-block;
+}
+
+
+.link_button {
+  color: black;
+  border: 2px solid darkred;
+  margin: 2px;
+  padding: 5px;
+  background-color: white;
+}
+
+.list_a_space {
+  width: 170px !important;
+}
+
+.link_button:hover {
+  background-color: #eeeeee;
+}
+
+
+.link_button_grey {
+  float: right;
+  width: 80px;
+  color: black;
+  text-decoration: none;
+  border: 2px solid darkgrey;
+  background-color: #eeeeee;
+  margin: 20px;
+  padding: 2px;
+  text-align: center;
+}
+
+a, a:hover {
+  text-decoration: none;
+  color: black;
+}
+
+/* Listing */
+
+.row {
+  width: 1024px;
+  margin: auto;
+}
+.listing {
+  border: 2px solid darkred;
+  margin: 10px;
+}
+
+.listing img {
+  width: 260px;
+}
+
+.listings li {
+  margin-bottom: 20px;
+}
