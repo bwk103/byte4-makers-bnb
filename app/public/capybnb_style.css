@@ -15,6 +15,7 @@ a {
 
 h1 {
   margin-top: 2em;
+  margin-bottom: 2em;
 }
 
 h4 {
@@ -151,8 +152,32 @@ a, a:hover {
 .listing {
   border: 2px solid darkred;
   margin: 20px 5px 20px 5px;
-  min-height: 420px;
+  min-height: 430px;
   padding: 1em;
+}
+
+.requests {
+  border: 2px solid lightgrey;
+  margin: 20px 5px 20px 5px;
+  padding: 1em;
+}
+
+.guest_request {
+  border: 2px solid darkblue;
+  margin: 5px 5px 20px 5px;
+  padding: 1em;
+}
+
+.host_request {
+  border: 2px solid darkgreen;
+  margin: 5px 5px 20px 5px;
+  padding: 1em;
+}
+
+.confirm-deny {
+  font-weight: 600;
+  float: right;
+  margin-top: -20px;
 }
 
 .listing img {

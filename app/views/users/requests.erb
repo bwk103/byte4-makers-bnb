@@ -1,34 +1,44 @@
-<h1>Requests</h1>
+<h1 class="text-center">This is all you need to know about your requests...</h1>
 
-<h2>Requests you have made:</h2>
+<div class="row">
+  <div class="col-md-6">
 
-  <ul id="guest_requests">
-    <% @bookings.each do |booking| %>
-      <% if booking.guest_id == current_user.id %>
-      <li>
-        Space: <%= booking.space.title %><br />
-        Msg: <%= booking.request_text %></br>
-        Date: <%= booking.date %></br>
-        Status: <%= booking.status %></br>
-      </li>
-      <% end %>
-    <% end %>
-  </ul>
+    <h3 class="text-center">Requests you have made</h3>
+    <div class="requests">
+      <div id="guest_requests">
+        <% @bookings.each do |booking| %>
+          <% if booking.guest_id == current_user.id %>
+          <div class="guest_request">
+            <p><b>Space:</b> <%= booking.space.title %><br />
+            <b>Msg:</b> <%= booking.request_text %></br>
+            <b>Date:</b> <%= booking.date %></br>
+            <b>Status:</b> <%= booking.status %></br></p>
+          </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
 
-
-<h2>Requests you have received:</h2>
-
-  <ul id="host_requests">
-    <% @bookings.each do |booking| %>
-      <% if booking.space.user_id == current_user.id %>
-      <li>
-        Space: <%= booking.space.title %><br />
-        Msg: <%= booking.request_text %></br>
-        Date: <%= booking.date %></br>
-        Guest: <%= User.get(booking.guest_id).email %></br>
-        Status: <%= booking.status %></br>
-        <a href='/users/requests/confirmation/<%= booking.id %>'>Confirm / deny</a>
-      </li>
-      <% end %>
-    <% end %>
-  </ul>
+  <div class="col-md-6">
+    <h3 class="text-center">Requests you have received</h3>
+    <div class="requests">
+      <div id="host_requests">
+        <% @bookings.each do |booking| %>
+          <% if booking.space.user_id == current_user.id %>
+          <div class="host_request">
+            <p><b>Space:</b> <%= booking.space.title %><br />
+            <b>Msg:</b> <%= booking.request_text %></br>
+            <b>Date:</b> <%= booking.date %></br>
+            <b>Guest:</b> <%= User.get(booking.guest_id).email %></br>
+            <b>Status:</b> <%= booking.status %></br></p>
+            <div class="confirm-deny">
+              <a class="link_button" href='/users/requests/confirmation/<%= booking.id %>'>Confirm / Deny</a>
+            </div>
+          </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
