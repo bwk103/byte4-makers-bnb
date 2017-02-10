@@ -1,4 +1,39 @@
-## Makers BnB
+## CapyBnB
+
+![CapyBnB Logo](./images/CapyBnb_logo.png)
+
+### Dev Team
+
+[Ben Kielty](https://github.com/bwk103)
+
+[Katerina Loschinina](https://github.com/kateloschinina)
+
+[Irene Canuti](https://github.com/nenoch)
+
+[Samir Gossain](https://github.com/sim-ware)
+
+### How to download and run CapyBnb locally:
+
+```
+$ git clone git@github.com:sim-ware/byte4-makers-bnb.git
+$ cd byte4-makers-bnb
+$ createdb makers_bnb_development
+$ createdb makers_bnb_test
+$ bundle install
+$ rackup -p 4567
+```
+visit <http://localhost:4567/>
+
+### Enjoy CapyBnB online on  **Heroku**: https://capybnb.herokuapp.com/
+
+### CapyBnb uses the following **technologies**:
+
+* `gem 'data_mapper'` - [DataMapper](http://datamapper.org/) a Object-Relational Map (ORM) that 'speaks ruby' to interact with databases.
+* `gem 'dm-postgres-adapter'` - [PostgresQL](https://www.postgresql.org/) an open source relational database management system (DBMS).
+* `gem 'bcrypt'` - [BCrypt](https://github.com/codahale/bcrypt-ruby) a library to encrypt/decrypt strings to keep passwords safe.
+* And - of course - [Sinatra](http://www.sinatrarb.com/) to develop Ruby Web Applications.
+
+### User Stories
 
 #### 1.0 User can sign-in and sign-up
 ```
@@ -67,23 +102,19 @@ As a User;
 So that the customer knows the price;
 I want to be able to include a price per night.
 
-User Story 4.4*
---------------
-As a User;
-So that I can be more attractive internationally;
-I want to be able to quote the price in a range of currencies.
-
 User Story 4.5*
 --------------
 As a User;
 So that I can better market the property;
 I want to be able to include pictures of my property.
+NOT COMPLETED.
 
 User Story 4.6*
 --------------
 As a User;
 So that guests can filter my property by features;
 I want to be able to choose tags to my property.
+NOT FILTERING.
 ```
 
 #### 5.0 Users should be able to offer a range of dates where their space is available.
@@ -144,35 +175,4 @@ User Story 8.1
 As a Host;
 So that I can manage multiple requests for the same date;
 I want to be able to confirm the booking for the guest of my choice.
-```
-
-#### Nice-to-haves
-```
-As a User;
-So that I know my registration was successful;
-I’d like to receive a confirmation email upon signing up.
-
-As a Host;
-So that I know my listing is online;
-I’d like to receive a confirmation email (containing the listing) when I create the new listing.
-
-As a Host;
-So that I know that my listing has changed;
-I’d like to receive a confirmation email (containing the amended details) when I update a listing.
-
-As a Host;
-So that I am made aware of a guest’s enquiry;
-I would like to receive an email containing the request.
-
-As a Guest;
-So that I know that my booking enquiry was sent to the Host;
-I’d like to receive a confirmation email when I contact.
-
-As a Guest;
-So that I know that my booking request was successful;
-I’d like to receive a confirmation email when the Host confirms my booking.
-
-As a Guest;
-So that I know that my booking request was unsuccessful;
-I’d like to receive a confirmation email if the Host rejects my booking.
 ```
