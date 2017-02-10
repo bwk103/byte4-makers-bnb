@@ -30,4 +30,5 @@ class Space
     (self.available_dates.include? date) &&
     !(self.unavailable_dates.include? date)
   end
+  
 end
