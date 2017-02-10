@@ -4,7 +4,7 @@ source "https://rubygems.org"
 # gem "rails"
 ruby '2.3.3'
 
-group :test do
+# group :test do
   gem 'database_cleaner'
   gem 'rspec-sinatra'
   gem 'capybara'
@@ -15,7 +15,7 @@ group :test do
   gem 'rubocop-rspec'
   gem 'rubocop'
   gem 'factory_girl'
-end
+# end
 
 # group :development do
   gem 'data_mapper', '~> 1.2.0'
