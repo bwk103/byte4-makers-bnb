@@ -6,6 +6,7 @@ class MakersBnB < Sinatra::Base
 
   enable :sessions
   register Sinatra::Flash
+    use Rack::MethodOverride
 
   helpers do
     def current_user
