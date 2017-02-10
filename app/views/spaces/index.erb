@@ -18,7 +18,7 @@
 <ul id="spaces" class='listings'>
   <% if @selected_date%>
     <% @spaces.each do |space| %>
-        <% unless booked_dates(space).include? @selected_date %>
+        <% unless (booked_dates(space).include? @selected_date) || !(available_period(space).include? @selected_date) %>
           <li class='listing'>
             <p><b>Title:</b> <%= space.title %><br />
             <b>Description:</b> <%= space.description %><br />
