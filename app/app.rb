@@ -59,6 +59,7 @@ class MakersBnB < Sinatra::Base
   get '/spaces/:id' do
     @space = Space.get(params[:id])
     @unavailable_dates = Booking.all(:space_id => @space.id, :status => "Confirmed")
+    @tags = Tag.all
     session[:space_id] = params[:id]
     erb :'spaces/space_page'
   end
@@ -68,7 +69,6 @@ class MakersBnB < Sinatra::Base
       @selected_date = Date.strptime(params[:selected_date], '%Y-%m-%d')
     end
     @spaces = Space.all
-    @tags = Tag.all
     @filename = session[:filename]
     erb :'spaces/index'
   end
@@ -104,6 +104,7 @@ class MakersBnB < Sinatra::Base
       redirect 'users/requests'
     else
       flash.now[:errors] = 'Unavailable Date.'
+      @tags = Tag.all
       erb :'spaces/space_page'
     end
   end
