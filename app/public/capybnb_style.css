@@ -15,6 +15,7 @@ a {
 
 h1 {
   margin-top: 2em;
+  margin-bottom: 2em;
 }
 
 h4 {
@@ -26,9 +27,10 @@ h4 {
 /* Top Bar */
 
 .logo{
-  height: 12vh;
+  height: 25vh;
   position: absolute;
   margin-left: 100px;
+  margin-top: 10px;
 }
 
 header {
@@ -60,6 +62,13 @@ header {
   padding: 20px;
 }
 
+.big_box {
+  width: 640px;
+  margin: 40px auto;
+  border: 2px solid darkred;
+  padding: 20px;
+}
+
 input[type='email' i], input[type='password' i], textarea {
   margin-top: 10px;
   width: 100%;
@@ -82,6 +91,10 @@ input[type="submit" i]:hover {
   background-color: #eeeeee;
 }
 
+input[type="checkbox"] {
+  margin: 5px;
+}
+
 /* Spaces page */
 
 input[type="date" i] {
@@ -90,13 +103,14 @@ input[type="date" i] {
   margin-top: 10px;
 }
 
-.tags {
-  display: inline-block;
+.tags label {
+  font-weight: 300;
+  margin-left: 5px;
 }
 
-.tag {
-  text-align: center;
+.tags {
   display: inline-block;
+  margin-bottom: 10px;
 }
 
 
@@ -151,8 +165,32 @@ a, a:hover {
 .listing {
   border: 2px solid darkred;
   margin: 20px 5px 20px 5px;
-  min-height: 420px;
+  min-height: 430px;
   padding: 1em;
+}
+
+.requests {
+  border: 2px solid lightgrey;
+  margin: 20px 5px 20px 5px;
+  padding: 1em;
+}
+
+.guest_request {
+  border: 2px solid darkblue;
+  margin: 5px 5px 20px 5px;
+  padding: 1em;
+}
+
+.host_request {
+  border: 2px solid darkgreen;
+  margin: 5px 5px 20px 5px;
+  padding: 1em;
+}
+
+.confirm-deny {
+  font-weight: 600;
+  float: right;
+  margin-top: -20px;
 }
 
 .listing img {
@@ -165,4 +203,18 @@ a, a:hover {
 
 .listings li {
   margin-bottom: 20px;
+}
+
+.space_page_image {
+  max-height: 400px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+/* Notices */
+
+.notice {
+  text-align: center;
+  color: darkred;
+  font-weight: 600;
 }

@@ -9,8 +9,7 @@
     <body>
 
       <header>
-        <a href="/spaces">
-        <img class="logo" alt="CapyBnB Logo" src="https://cabinetm-beta.s3.amazonaws.com/00000151-f024-81f9-2162-aa79b005069f.png">
+        <a href="/spaces"><img class="logo" alt="CapyBnB Logo" src="https://cabinetm-beta.s3.amazonaws.com/00000151-f024-81f9-2162-aa79b005069f.png">
         </a>
 
         <% if current_user %>
@@ -22,25 +21,26 @@
 
           <% else %>
           <ul class="menu nav navbar-right navbar-fixed-top">
-            <li role="presentation" class="menu_item disabled"><a href="/about">About</a></li>
+            <li role="presentation" class="menu_item"><a href="https://github.com/sim-ware/byte4-makers-bnb">About</a></li>
             <li role="presentation" class="menu_item"><a href="/users/login">Log In</a></li>
           </ul>
           <% end %>
 
         </header>
 
-        <% if current_user %>
-          <h1 class="text-center">Hello, <%= current_user.email %>!</h1>
-        <% end %>
+
+      <% if current_user %>
+        <h1 class="text-center">Hello, <%= current_user.email %>!</h1>
+      <% end %>
 
       <% if flash[:notice] %>
-        <div id="notice">
+        <div id="notice" class="notice">
         <%= flash[:notice] %>
         </div>
       <% end %>
 
       <% if flash[:errors] %>
-        <div id="error"><%= flash[:errors] %></div>
+        <div id="error" class="notice"><%= flash[:errors] %></div>
       <% end %>
 
       <%= yield %>
