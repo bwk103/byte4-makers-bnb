@@ -2,9 +2,14 @@
 
 ![CapyBnB Logo](./images/CapyBnb_logo.png)
 
-A different AirBnb.
+### Dev Team
 
-* How to download and run CapyBnb locally:
+[Ben Kielty](https://github.com/bwk103)
+[Ekaterina Loshchinina](https://github.com/kateloschinina)
+[Irene Canuti](https://github.com/nenoch)
+[Samir Gossain](https://github.com/sim-ware)
+
+### How to download and run CapyBnb locally:
 
 ```
 $ git clone git@github.com:sim-ware/byte4-makers-bnb.git
@@ -16,13 +21,16 @@ $ rackup -p 4567
 ```
 visit <http://localhost:4567/>
 
-* Enjoy CapyBnB online on  **Heroku**: https://capybnb.herokuapp.com/
+### Enjoy CapyBnB online on  **Heroku**: https://capybnb.herokuapp.com/
 
-Chitter uses the following **technologies**:
+### CapyBnb uses the following **technologies**:
+
 * `gem 'data_mapper'` - [DataMapper](http://datamapper.org/) a Object-Relational Map (ORM) that 'speaks ruby' to interact with databases.
 * `gem 'dm-postgres-adapter'` - [PostgresQL](https://www.postgresql.org/) an open source relational database management system (DBMS).
 * `gem 'bcrypt'` - [BCrypt](https://github.com/codahale/bcrypt-ruby) a library to encrypt/decrypt strings to keep passwords safe.
 * And - of course - [Sinatra](http://www.sinatrarb.com/) to develop Ruby Web Applications.
+
+### User Stories
 
 #### 1.0 User can sign-in and sign-up
 ```
