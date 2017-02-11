@@ -60,7 +60,7 @@ def go_to_confirm_or_deny_form
   click_link 'Sign Out'
   login_with_existing_user
   visit '/users/requests'
-  click_link 'Confirm / deny'
+  click_link 'Confirm / Deny'
 end
 
 def book_an_existing_space
