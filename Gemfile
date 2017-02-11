@@ -15,7 +15,7 @@ ruby '2.3.3'
   gem 'rubocop-rspec'
   gem 'rubocop'
   gem 'factory_girl'
-# end
+  gem 'sinatra-partial'
 
 # group :development do
   gem 'data_mapper', '~> 1.2.0'

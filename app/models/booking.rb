@@ -9,4 +9,12 @@ class Booking
 
   belongs_to :space
 
+  def booking_confirmation(response)
+    if response == 'Confirm'
+      self.status = 'Confirmed'
+    elsif response == 'Deny'
+      self.status = 'Denied'
+    end
+  end
+
 end

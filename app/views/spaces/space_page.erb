@@ -5,12 +5,13 @@
 <p><%= @space.description %></p>
 <p><b>Price per night:</b> £<%= @space.price %></p>
 
-<p> <b>Available from</b> <%= @space.start_date.strftime("%d/%m/%Y") %> <b>to</b> <%= @space.end_date.strftime("%d/%m/%Y") %></p>
+<p> <b>Available from</b> <%= date_to_string(@space.start_date) %> <b>to</b> <%= date_to_string(@space.end_date) %></p>
 <div> <b>Unavailable on:</b>
     <div id="booked_dates">
-      <% if @unavailable_dates %>
-        <% @unavailable_dates.each do |booking| %>
-          <div> <%= booking.date.strftime("%d/%m/%Y") %>         </div>
+      <% @space.unavailable_dates.length > 0 %>
+        <% @space.unavailable_dates.each do |date| %>
+          <div> <%= date_to_string(date) %>         </div>
+
         <% end %>
       <% end %>
     </div>
