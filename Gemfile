@@ -4,9 +4,10 @@ source "https://rubygems.org"
 # gem "rails"
 ruby '2.3.3'
 
-group :test do
+# group :test do
   gem 'database_cleaner'
   gem 'rspec-sinatra'
+  gem 'capybara'
   gem 'rspec'
   gem 'cucumber'
   gem 'rake'
@@ -15,7 +16,6 @@ group :test do
   gem 'rubocop'
   gem 'factory_girl'
   gem 'sinatra-partial'
-end
 
 # group :development do
   gem 'data_mapper', '~> 1.2.0'
@@ -24,10 +24,11 @@ end
   gem 'dm-transactions'
   gem 'sinatra'
   gem 'sinatra-flash'
-  gem 'capybara'
   gem 'pry'
   gem 'bcrypt'
   gem 'encrypted_cookie'
   gem 'carrierwave-datamapper', :require => 'carrierwave/datamapper'
   gem 'mini_magick'
+  gem 'selenium-webdriver'
+  gem 'pg'
 # end

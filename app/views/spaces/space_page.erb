@@ -1,26 +1,40 @@
-<h1><%= @space.title %></h1>
+
+<div  class="text-center">
+<h3><%= @space.title %></h3>
 
 <p><%= @space.description %></p>
-<p>Price per night: <%= @space.price %></p>
+<p><b>Price per night:</b> £<%= @space.price %></p>
 
-<p> Available from: <%= date_to_string(@space.start_date) %> to: <%= date_to_string(@space.end_date) %></p>
-<p> Unavailable on:
-    <ul id="booked_dates">
-      <% if @space.unavailable_dates.length > 0 %>
+<p> <b>Available from</b> <%= date_to_string(@space.start_date) %> <b>to</b> <%= date_to_string(@space.end_date) %></p>
+<div> <b>Unavailable on:</b>
+    <div id="booked_dates">
+      <% @space.unavailable_dates.length > 0 %>
         <% @space.unavailable_dates.each do |date| %>
-          <li> <%= date_to_string(date) %>
-          </li>
+          <div> <%= date_to_string(date) %>         </div>
+
         <% end %>
       <% end %>
-</p>
+    </div>
+</div>
+<div>
+  <img class="space_page_image" src="http://lorempixel.com/output/nature-q-c-640-480-<%= @space.id % 8 + 1 %>.jpg">
+</div>
+<p><b>Tags:</b></p><br>
+  <div>
+    <% @tags.each do |tag| %>
+      <% if tag.space_id == @space.id and tag.name %>
+        <div> <%= tag.name %> </div>
+      <% end %>
+    <% end %>
+  </div>
 
 
 
-<form action='/requests' method='post'>
-<textarea cols="50" rows="4" name='text'></textarea><br>
+<form action="/requests" method="post" class="big_box text-center">
+<textarea cols="50" rows="4" name="text"></textarea><br>
 <label>
   Enter a date for your stay:
 </label>
-<input type='date' name='date'><br>
-<input type= 'submit' value= 'Request to Book' name='booking'>
+<input type="date" name="date"><br>
+<input type= "submit" value= "Request to Book" name="booking">
 </form>
