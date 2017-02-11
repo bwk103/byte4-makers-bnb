@@ -8,10 +8,9 @@
 <p> <b>Available from</b> <%= date_to_string(@space.start_date) %> <b>to</b> <%= date_to_string(@space.end_date) %></p>
 <div> <b>Unavailable on:</b>
     <div id="booked_dates">
-      <% @space.unavailable_dates.length > 0 %>
+      <% if @space.unavailable_dates.length > 0 %>
         <% @space.unavailable_dates.each do |date| %>
-          <div> <%= date_to_string(date) %>         </div>
-
+          <div> <%= date_to_string(date) %></div>
         <% end %>
       <% end %>
     </div>

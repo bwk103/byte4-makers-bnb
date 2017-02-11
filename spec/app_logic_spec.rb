@@ -20,6 +20,5 @@ feature "header messages logic" do
     create_listing
     expect(page).to have_content 'Casa della Pizza'
     expect(page).to have_content 'This is your space!'
-    expect(page).not_to have_content 'Book'
   end
 end

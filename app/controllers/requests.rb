@@ -8,6 +8,7 @@ class MakersBnB < Sinatra::Base
       redirect 'users/requests'
     else
       flash.now[:errors] = 'Unavailable Date.'
+      @tags = Tag.all
       erb :'spaces/space_page'
     end
   end

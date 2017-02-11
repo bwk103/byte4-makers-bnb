@@ -2,9 +2,7 @@ feature 'requests displayed on page' do
 
   scenario 'Guest can see their requests' do
     request_to_book
-    within('ul#guest_requests') do
-      expect(page).to have_content('Casa della Pizza')
-    end
+    expect(page).to have_content('Casa della Pizza')
   end
 
   scenario 'Guest can see their requests' do
@@ -12,9 +10,7 @@ feature 'requests displayed on page' do
     click_link 'Sign Out'
     login_with_existing_user
     visit '/users/requests'
-    within('ul#host_requests') do
-      expect(page).to have_content('I wanna book this!')
-    end
+    expect(page).to have_content('I wanna book this!')
   end
 
 # User Story 6.2

@@ -19,7 +19,7 @@
   <div class="row listings" id="spaces">
       <% if @selected_date%>
         <% @spaces.each do |space| %>
-            <% unless booked_dates(space).include? @selected_date %>
+            <% if space.is_available_on(@selected_date) %>
             <div class="col-xs-6 col-sm-4">
               <div class="listing text-center">
                 <p><b>Title:</b> <%= space.title %><br />

@@ -19,7 +19,9 @@ class MakersBnB < Sinatra::Base
 
   get '/spaces' do
     if (params[:selected_date]) && (params[:selected_date] != "")
+      p params[:selected_date]
       @selected_date = string_to_date(params[:selected_date])
+      p @selected_date
     end
     @spaces = Space.all
     @tags = Tag.all
