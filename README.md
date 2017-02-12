@@ -29,9 +29,10 @@ visit <http://localhost:4567/>
 
 ### CapyBnb uses the following **technologies**:
 
-* `gem 'data_mapper'` - [DataMapper](http://datamapper.org/) a Object-Relational Map (ORM) that 'speaks ruby' to interact with databases.
-* `gem 'dm-postgres-adapter'` - [PostgresQL](https://www.postgresql.org/) an open source relational database management system (DBMS).
-* `gem 'bcrypt'` - [BCrypt](https://github.com/codahale/bcrypt-ruby) a library to encrypt/decrypt strings to keep passwords safe.
+* `gem 'data_mapper'` - [DataMapper](http://datamapper.org/), a Object-Relational Map (ORM) that 'speaks ruby' to interact with databases.
+* `gem 'dm-postgres-adapter'` - [PostgresQL](https://www.postgresql.org/), an open source relational database management system (DBMS).
+* `gem 'bcrypt'` - [BCrypt](https://github.com/codahale/bcrypt-ruby), a library to encrypt/decrypt strings to keep passwords safe.
+* [Bootstrap](http://getbootstrap.com/), one of the most popular JS, HTML, CSS frameworks. CapyBnb uses its grid system (CSS + HTML).
 * And - of course - [Sinatra](http://www.sinatrarb.com/) to develop Ruby Web Applications.
 
 ### User Stories
