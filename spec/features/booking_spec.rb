@@ -6,27 +6,27 @@ feature 'Booking' do
   # So that I can make a booking for 1 night;
   # I want to be able to send a request to the Host.
 
-  scenario 'user can see the availability on the booking page' do
+  scenario 'User can see the availability on the booking page' do
     book_an_existing_space
     expect(current_path).to have_content '/spaces/'
     expect(page).to have_content 'Available from 04/07/2017 to 18/07/2017'
   end
 
-  scenario 'user can book on an available date' do
+  scenario 'User can book on an available date' do
     book_an_existing_space
     fill_in :date, with: '2017-07-15'
     click_button 'Request to Book'
     expect(page).to have_content 'Requests you have made'
   end
 
-  scenario 'user can\'t book on an unavailable date' do
+  scenario 'User can\'t book on an unavailable date' do
     book_an_existing_space
     fill_in :date, with: '2016-07-05'
     click_button 'Request to Book'
     expect(page).to have_content 'Unavailable Date.'
   end
 
-  scenario 'if another user has had booking confirmed for same dates - user cannot book' do
+  scenario 'If another user has had booking confirmed for same dates - user cannot book' do
     book_an_existing_space
     fill_in :date, with: '2017-07-05'
     click_button 'Request to Book'
@@ -54,7 +54,7 @@ feature 'Booking' do
 # So that I can make sure I am booking an available property;
 # I want to see on the listing if it is not available.
 
-  scenario 'user can see unavailable dates on the space page' do
+  scenario 'User can see unavailable dates on the space page' do
     book_an_existing_space
     fill_in :date, with: '2017-07-05'
     click_button 'Request to Book'
@@ -74,7 +74,7 @@ feature 'Booking' do
     expect(page).to have_content('05/07/2017')
   end
 
-  scenario 'user can filter property according to availability on a specific date' do
+  scenario 'User can filter property according to availability on a specific date' do
     book_an_existing_space
     fill_in :date, with: '2017-07-05'
     click_button 'Request to Book'
