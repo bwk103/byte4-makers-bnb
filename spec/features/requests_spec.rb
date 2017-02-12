@@ -1,4 +1,4 @@
-feature 'requests displayed on page' do
+feature 'Requests' do
 
   scenario 'Guest can see their requests' do
     request_to_book
@@ -25,7 +25,7 @@ feature 'requests displayed on page' do
 # So that I can manage multiple requests for the same date;
 # I want to be able to confirm the booking for the guest of my choice.
 
-  scenario 'User Story 6.2 and 8.1: Host can confirm request' do
+  scenario 'Host can confirm request' do
     go_to_confirm_or_deny_form
     click_button 'Confirm'
     expect(page).to have_content('Confirmed')
