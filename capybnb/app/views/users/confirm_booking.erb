@@ -1,0 +1,9 @@
+<h1 class="text-center"><%= @booking.space.title %></h1>
+
+<p class="text-center"><%= @booking.space.description %></p>
+<p class="text-center">Date: <%= @booking.date %></p>
+
+<form action="confirm" method="post" class="text-center">
+  <input  class="list_a_space link_button" type="submit" name="confirm" value="Confirm">
+  <input  class="list_a_space link_button" type="submit" name="deny" value="Deny">
+</form>
